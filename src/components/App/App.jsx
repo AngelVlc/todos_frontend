@@ -12,6 +12,8 @@ import { AppContext } from '../../contexts/AppContext';
 import { requestErrorShowed } from '../../actions';
 import Loader from 'react-loader-spinner';
 import { useAlert } from 'react-alert'
+import { doRefreshToken } from '../../helpers/api';
+// import { userLoggedIn } from '../../actions'
 import './App.css';
 
 const history = createBrowserHistory();
@@ -27,6 +29,19 @@ const App = () => {
       requestsDispatch(requestErrorShowed())
     }
   }, [request.error, alert, requestsDispatch]);
+
+  useEffect(() => {
+    if (auth.info && auth.info.token) {
+      const expInSeconds = (auth.info.exp * 1000) - new Date().getTime() - 15000;
+      console.log(expInSeconds, new Date(auth.info.exp * 1000), auth.info);
+      setTimeout(async () => {
+          console.log(new Date())
+          const res = await doRefreshToken();
+          console.log('refreshToken', res);
+          // authDispatch(userLoggedIn(res, ));
+      }, expInSeconds);
+    }
+  }, [auth.info, authDispatch]);
 
   return (
     <AppContext.Provider value={{ auth, request, authDispatch, requestsDispatch }}>
