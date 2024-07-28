@@ -54,6 +54,26 @@ exports[`CategoryForm should match the snapshot for a new category 1`] = `
       />
     </div>
     <div
+      class="field"
+    >
+      <label
+        class="label"
+        for="isFavourite"
+      >
+        Is Favourite Category
+      </label>
+      <div
+        class="control"
+      >
+        <input
+          data-testid="isFavourite"
+          name="isFavourite"
+          type="checkbox"
+          value="false"
+        />
+      </div>
+    </div>
+    <div
       class="field is-grouped"
     >
       <div
@@ -135,6 +155,26 @@ exports[`CategoryForm should match the snapshot for an existing category 1`] = `
         class="help is-danger"
         data-testid="descriptionErrors"
       />
+    </div>
+    <div
+      class="field"
+    >
+      <label
+        class="label"
+        for="isFavourite"
+      >
+        Is Favourite Category
+      </label>
+      <div
+        class="control"
+      >
+        <input
+          data-testid="isFavourite"
+          name="isFavourite"
+          type="checkbox"
+          value=""
+        />
+      </div>
     </div>
     <div
       class="field is-grouped"

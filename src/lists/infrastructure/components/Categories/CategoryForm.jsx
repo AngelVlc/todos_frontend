@@ -58,6 +58,14 @@ export const CategoryForm = (props) => {
             <ErrorMessage name="description" />
           </p>
         </div>
+        <div className="field">
+          <label className="label" htmlFor="isFavourite">
+            Is Favourite Category
+          </label>
+          <div className="control">
+            <Field name="isFavourite" type="checkbox" data-testid="isFavourite" />
+          </div>
+        </div>
         <div className="field is-grouped">
           <div className="control">
             <button className="button" data-testid="submit" type="submit">

@@ -21,7 +21,10 @@ const history = createMemoryHistory();
 
 const renderWithContextAndRouter = () => {
   const fakeGetCategoriesUseCase = {
-    execute: () => [new Category({ id: 1, name: "category1", description: "desc1" }), new Category({ id: 2, name: "category2", description: "desc2" })],
+    execute: () => [
+      new Category({ id: 1, name: "category1", description: "desc1", isFavourite: false }),
+      new Category({ id: 2, name: "category2", description: "desc2", isFavourite: true }),
+    ],
   };
 
   const useCaseFactory = {

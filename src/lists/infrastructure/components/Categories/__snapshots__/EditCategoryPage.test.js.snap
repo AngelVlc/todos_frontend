@@ -93,6 +93,26 @@ exports[`EditCategoryPage should match the snapshot for an existing category 1`]
         />
       </div>
       <div
+        class="field"
+      >
+        <label
+          class="label"
+          for="isFavourite"
+        >
+          Is Favourite Category
+        </label>
+        <div
+          class="control"
+        >
+          <input
+            data-testid="isFavourite"
+            name="isFavourite"
+            type="checkbox"
+            value=""
+          />
+        </div>
+      </div>
+      <div
         class="field is-grouped"
       >
         <div

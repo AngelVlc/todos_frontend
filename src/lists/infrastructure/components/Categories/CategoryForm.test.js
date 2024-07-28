@@ -122,20 +122,27 @@ describe("CategoryForm", () => {
   });
 
   it("should create a new category", async () => {
-    const { getByTestId } = renderWithContextAndRouterForNewCategory();
+    let container;
+    await act(async () => {
+      container = renderWithContextAndRouterForNewCategory();
+    });
 
-    await changeInputValue(getByTestId, "name", "new category");
-    await changeInputValue(getByTestId, "description", "desc");
+    await changeInputValue(container.getByTestId, "name", "new category");
+    await changeInputValue(container.getByTestId, "description", "desc");
+    await waitFor(() => {
+      fireEvent.click(container.getByTestId("isFavourite"));
+    });
+    // await changeInputValue(getByTestId, "isFavourite", true);
 
     mockedCreateCategoryUseCase.execute.mockResolvedValue({ id: 55 });
 
     await waitFor(() => {
-      fireEvent.click(getByTestId("submit"));
+      fireEvent.click(container.getByTestId("submit"));
     });
 
     expect(mockedCreateCategoryUseCase.execute).toHaveBeenCalled();
 
-    const category = new Category({ id: -1, name: "new category", description: "desc" });
+    const category = new Category({ id: -1, name: "new category", description: "desc", isFavourite: true });
     expect(mockedCreateCategoryUseCase.execute.mock.calls[0][0]).toStrictEqual(category);
 
     expect(mockHistoryPush).toHaveBeenCalled();

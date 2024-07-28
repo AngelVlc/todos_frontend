@@ -34,6 +34,7 @@ export const CategoriesPage = () => {
             <thead>
               <tr>
                 <td>Name</td>
+                <td>Is Favourite</td>
                 <td>
                   <button
                     className="button is-small"
@@ -57,6 +58,15 @@ export const CategoriesPage = () => {
                     data-testid={`viewCategory${category.id}`}
                   >
                     <td>{category.name}</td>
+                    <td>
+                      {category.isFavourite && (
+                        <center>
+                          <span className="icon is-small">
+                            <i className="fas fa-check fa-xs"></i>
+                          </span>
+                        </center>
+                      )}
+                    </td>
                     <td onClick={(e) => e.stopPropagation()}>
                       <center>
                         <Link
