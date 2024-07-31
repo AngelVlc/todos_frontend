@@ -9,6 +9,7 @@ export const Header = () => {
     let history = useHistory();
 
     const onLogoutClick = () => {
+        onToggleNavBar();
         history.push('/login');
     }
 
@@ -22,7 +23,7 @@ export const Header = () => {
             <div className="navbar-brand">
                 <span className="navbar-item is-size-3">To Dos</span>
                 {auth.info &&
-                    <div className="navbar-burger" ref={navBarBurguerRef} onClick={(e) => onToggleNavBar(e)}>
+                    <div className="navbar-burger" ref={navBarBurguerRef} onClick={() => onToggleNavBar()}>
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
