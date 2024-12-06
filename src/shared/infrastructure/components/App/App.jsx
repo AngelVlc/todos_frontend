@@ -73,6 +73,7 @@ const App = () => {
               <PrivateRoute path="/categories/new" component={NewCategoryPage} />
               <PrivateRoute path="/categories/:categoryId/delete" component={DeleteCategoryPage} />
               <PrivateRoute path="/categories/:categoryId" component={EditCategoryPage} />
+              <PrivateRoute path="/categories/:categoryId/lists" component={ListsPage} />
               <AdminRoute exact path="/users" component={UsersPage} />
               <AdminRoute path="/users/:userId/delete" component={DeleteUserPage} />
               <AdminRoute path="/users/:userId/edit" component={EditUserPage} />
