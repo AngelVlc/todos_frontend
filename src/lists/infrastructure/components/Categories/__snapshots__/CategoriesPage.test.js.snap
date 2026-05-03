@@ -68,7 +68,7 @@ exports[`CategoriesPage should match the snapshot 1`] = `
               />
             </span>
             <span>
-              New Category
+              Add Category
             </span>
           </button>
         </div>

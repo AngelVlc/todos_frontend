@@ -42,7 +42,7 @@ export const CategoriesPage = () => {
                 <span className="icon">
                   <i className="fas fa-plus"></i>
                 </span>
-                <span>New Category</span>
+                <span>Add Category</span>
               </button>
             </div>
           </div>

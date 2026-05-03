@@ -64,11 +64,11 @@ exports[`UsersPage should match the snapshot 1`] = `
               class="icon"
             >
               <i
-                class="fas fa-user-plus"
+                class="fas fa-plus"
               />
             </span>
             <span>
-              New User
+              Add User
             </span>
           </button>
         </div>

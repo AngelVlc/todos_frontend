@@ -69,6 +69,11 @@ exports[`NewListPage should match the snapshot for a new list 1`] = `
             <div
               class="box"
             >
+              <button
+                aria-label="close"
+                class="modal-close is-large"
+                data-testid="modalClose"
+              />
               <div
                 class="content"
               >
@@ -131,30 +136,43 @@ exports[`NewListPage should match the snapshot for a new list 1`] = `
                   class="control"
                 >
                   <button
-                    class="button"
+                    class="button is-primary"
                     data-testid="modalOk"
                   >
-                    OK
+                    <span
+                      class="icon"
+                    >
+                      <i
+                        class="fas fa-check"
+                      />
+                    </span>
+                    <span>
+                      OK
+                    </span>
                   </button>
                 </div>
                 <div
                   class="control"
                 >
                   <button
-                    class="button"
+                    class="button is-light"
                     data-testid="modalCancel"
                   >
-                    CANCEL
+                    <span
+                      class="icon"
+                    >
+                      <i
+                        class="fas fa-times"
+                      />
+                    </span>
+                    <span>
+                      Cancel
+                    </span>
                   </button>
                 </div>
               </div>
             </div>
           </div>
-          <button
-            aria-label="close"
-            class="modal-close is-large"
-            data-testid="modalClose"
-          />
         </div>
         <div
           class="card is-shadowless"
