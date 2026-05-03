@@ -102,224 +102,311 @@ exports[`ListForm when the list already exist should match the snapshot 1`] = `
       data-testid="modalClose"
     />
   </div>
-  <form
-    action="#"
+  <div
+    class="card is-shadowless"
   >
     <div
-      class="field"
+      class="card-content"
     >
-      <label
-        class="label"
-        for="name"
-      >
-        Name
-      </label>
-      <div
-        class="control"
-      >
-        <input
-          class="input"
-          data-testid="name"
-          name="name"
-          value="list name"
-        />
-      </div>
-      <p
-        class="help is-danger"
-        data-testid="nameErrors"
-      />
-    </div>
-    <div
-      class="field"
-    >
-      <label
-        class="label"
-        for="categoryId"
-      >
-        Category
-      </label>
-      <div
-        class="control"
-      >
-        <select
-          class="input"
-          data-testid="categoryId"
-          name="categoryId"
-        >
-          <option
-            value=""
-          />
-          <option
-            value="1"
-          >
-            category1
-          </option>
-          <option
-            value="2"
-          >
-            category2
-          </option>
-        </select>
-      </div>
-      <p
-        class="help is-danger"
-        data-testid="categoryIdErrors"
-      />
-    </div>
-    <div>
-      <div
-        class="is-flex"
+      <form
+        action="#"
       >
         <div
-          class="is-flex-grow-4"
+          class="field"
         >
-          <span
+          <label
             class="label"
+            for="name"
           >
-            List Items
-          </span>
-        </div>
-      </div>
-      <div
-        class="dnd-container"
-      >
-        <div
-          class="list-button mt-2 mb-2"
-        >
-          <button
-            class="button is-small"
-            data-testid="addNew"
-            type="button"
+            Name
+          </label>
+          <div
+            class="control has-icons-left"
           >
+            <input
+              class="input"
+              data-testid="name"
+              name="name"
+              placeholder="Enter list name"
+              value="list name"
+            />
             <span
-              class="icon is-small"
+              class="icon is-small is-left"
             >
               <i
-                class="fas fa-plus"
+                class="fas fa-list"
               />
             </span>
-            <span>
-              Add
-            </span>
-          </button>
+          </div>
+          <p
+            class="help is-danger"
+            data-testid="nameErrors"
+          />
         </div>
         <div
-          class="dnd-list"
-          data-rbd-droppable-context-id="0"
-          data-rbd-droppable-id="2"
+          class="field"
+        >
+          <label
+            class="label"
+            for="categoryId"
+          >
+            Category
+          </label>
+          <div
+            class="control has-icons-left"
+          >
+            <select
+              class="input"
+              data-testid="categoryId"
+              name="categoryId"
+            >
+              <option
+                value=""
+              >
+                Select a category
+              </option>
+              <option
+                value="1"
+              >
+                category1
+              </option>
+              <option
+                value="2"
+              >
+                category2
+              </option>
+            </select>
+            <span
+              class="icon is-small is-left"
+            >
+              <i
+                class="fas fa-tags"
+              />
+            </span>
+          </div>
+          <p
+            class="help is-danger"
+            data-testid="categoryIdErrors"
+          />
+        </div>
+        <div
+          class="mt-6"
         >
           <div
-            aria-describedby="rbd-hidden-text-0-hidden-text-0"
-            class="is-flex dnd-item p-2 mb-2"
-            data-rbd-drag-handle-context-id="0"
-            data-rbd-drag-handle-draggable-id="5"
-            data-rbd-draggable-context-id="0"
-            data-rbd-draggable-id="5"
-            data-testid="draggable5"
-            draggable="false"
-            role="button"
-            tabindex="0"
+            class="level is-mobile mb-3"
           >
             <div
-              class="is-flex-grow-4"
-              data-testid="editListItem5"
+              class="level-left"
             >
               <span
-                class="has-text-black"
+                class="title is-5"
               >
-                item 5 title
+                <span
+                  class="icon mr-1 has-text-primary"
+                >
+                  <i
+                    class="fas fa-clipboard-list"
+                  />
+                </span>
+                List Items
               </span>
             </div>
             <div
-              class="is-justify-content-flex-end"
+              class="level-right"
             >
-              <center>
+              <button
+                class="button is-primary is-small"
+                data-testid="addNew"
+                type="button"
+              >
                 <span
-                  class="icon is-clickable rounded-button"
+                  class="icon is-small"
                 >
                   <i
-                    class="fas fa-dolly fa-xs"
+                    class="fas fa-plus"
                   />
                 </span>
-                <button
-                  class="delete ml-2"
-                  data-testid="deleteListItem5"
-                  type="button"
-                />
-              </center>
+                <span>
+                  Add Item
+                </span>
+              </button>
             </div>
           </div>
           <div
-            aria-describedby="rbd-hidden-text-0-hidden-text-0"
-            class="is-flex dnd-item p-2 mb-2"
-            data-rbd-drag-handle-context-id="0"
-            data-rbd-drag-handle-draggable-id="6"
-            data-rbd-draggable-context-id="0"
-            data-rbd-draggable-id="6"
-            data-testid="draggable6"
-            draggable="false"
-            role="button"
-            tabindex="0"
+            class="dnd-container"
           >
             <div
-              class="is-flex-grow-4"
-              data-testid="editListItem6"
+              class="dnd-list"
+              data-rbd-droppable-context-id="0"
+              data-rbd-droppable-id="2"
             >
-              <span
-                class="has-text-black"
+              <div
+                aria-describedby="rbd-hidden-text-0-hidden-text-0"
+                class="card mb-2 p-3"
+                data-rbd-drag-handle-context-id="0"
+                data-rbd-drag-handle-draggable-id="5"
+                data-rbd-draggable-context-id="0"
+                data-rbd-draggable-id="5"
+                data-testid="draggable5"
+                draggable="false"
+                role="button"
+                tabindex="0"
               >
-                item 6 title
-              </span>
-            </div>
-            <div
-              class="is-justify-content-flex-end"
-            >
-              <center>
-                <span
-                  class="icon is-clickable rounded-button"
+                <div
+                  class="is-flex is-align-items-center"
                 >
-                  <i
-                    class="fas fa-dolly fa-xs"
-                  />
-                </span>
-                <button
-                  class="delete ml-2"
-                  data-testid="deleteListItem6"
-                  type="button"
-                />
-              </center>
+                  <div
+                    class="is-flex-grow-4"
+                    data-testid="editListItem5"
+                    style="cursor: pointer;"
+                  >
+                    <span
+                      class="has-text-weight-semibold"
+                    >
+                      item 5 title
+                    </span>
+                    <p
+                      class="is-size-7 has-text-grey mt-1"
+                    >
+                      item 5 description
+                    </p>
+                  </div>
+                  <div
+                    class="is-flex is-align-items-center"
+                  >
+                    <button
+                      class="button is-small is-info is-light mr-2"
+                      data-testid="moveListItem5"
+                      type="button"
+                    >
+                      <span
+                        class="icon is-small"
+                      >
+                        <i
+                          class="fas fa-dolly"
+                        />
+                      </span>
+                    </button>
+                    <button
+                      class="button is-small is-danger is-light"
+                      data-testid="deleteListItem5"
+                      type="button"
+                    >
+                      <span
+                        class="icon is-small"
+                      >
+                        <i
+                          class="fas fa-trash"
+                        />
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-describedby="rbd-hidden-text-0-hidden-text-0"
+                class="card mb-2 p-3"
+                data-rbd-drag-handle-context-id="0"
+                data-rbd-drag-handle-draggable-id="6"
+                data-rbd-draggable-context-id="0"
+                data-rbd-draggable-id="6"
+                data-testid="draggable6"
+                draggable="false"
+                role="button"
+                tabindex="0"
+              >
+                <div
+                  class="is-flex is-align-items-center"
+                >
+                  <div
+                    class="is-flex-grow-4"
+                    data-testid="editListItem6"
+                    style="cursor: pointer;"
+                  >
+                    <span
+                      class="has-text-weight-semibold"
+                    >
+                      item 6 title
+                    </span>
+                    <p
+                      class="is-size-7 has-text-grey mt-1"
+                    >
+                      item 6 description
+                    </p>
+                  </div>
+                  <div
+                    class="is-flex is-align-items-center"
+                  >
+                    <button
+                      class="button is-small is-info is-light mr-2"
+                      data-testid="moveListItem6"
+                      type="button"
+                    >
+                      <span
+                        class="icon is-small"
+                      >
+                        <i
+                          class="fas fa-dolly"
+                        />
+                      </span>
+                    </button>
+                    <button
+                      class="button is-small is-danger is-light"
+                      data-testid="deleteListItem6"
+                      type="button"
+                    >
+                      <span
+                        class="icon is-small"
+                      >
+                        <i
+                          class="fas fa-trash"
+                        />
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div
-      class="field is-grouped"
-    >
-      <div
-        class="control"
-      >
-        <button
-          class="button"
-          data-testid="submit"
-          type="submit"
+        <div
+          class="field is-grouped is-grouped-right mt-6"
         >
-          SAVE
-        </button>
-      </div>
-      <div
-        class="control ml-auto is-pulled-right"
-      >
-        <button
-          class="button"
-          data-testid="cancel"
-          type="button"
-        >
-          CANCEL
-        </button>
-      </div>
+          <div
+            class="control"
+          >
+            <button
+              class="button is-light"
+              data-testid="cancel"
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
+          <div
+            class="control"
+          >
+            <button
+              class="button is-primary"
+              data-testid="submit"
+              type="submit"
+            >
+              <span
+                class="icon"
+              >
+                <i
+                  class="fas fa-save"
+                />
+              </span>
+              <span>
+                Save Changes
+              </span>
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
-  </form>
+  </div>
 </DocumentFragment>
 `;
 
@@ -425,140 +512,200 @@ exports[`ListForm when the list is new should match the snapshot 1`] = `
       data-testid="modalClose"
     />
   </div>
-  <form
-    action="#"
+  <div
+    class="card is-shadowless"
   >
     <div
-      class="field"
+      class="card-content"
     >
-      <label
-        class="label"
-        for="name"
-      >
-        Name
-      </label>
-      <div
-        class="control"
-      >
-        <input
-          class="input"
-          data-testid="name"
-          name="name"
-          value=""
-        />
-      </div>
-      <p
-        class="help is-danger"
-        data-testid="nameErrors"
-      />
-    </div>
-    <div
-      class="field"
-    >
-      <label
-        class="label"
-        for="categoryId"
-      >
-        Category
-      </label>
-      <div
-        class="control"
-      >
-        <select
-          class="input"
-          data-testid="categoryId"
-          name="categoryId"
-        >
-          <option
-            value=""
-          />
-          <option
-            value="1"
-          >
-            category1
-          </option>
-          <option
-            value="2"
-          >
-            category2
-          </option>
-        </select>
-      </div>
-      <p
-        class="help is-danger"
-        data-testid="categoryIdErrors"
-      />
-    </div>
-    <div>
-      <div
-        class="is-flex"
+      <form
+        action="#"
       >
         <div
-          class="is-flex-grow-4"
+          class="field"
         >
-          <span
+          <label
             class="label"
+            for="name"
           >
-            List Items
-          </span>
-        </div>
-      </div>
-      <div
-        class="dnd-container"
-      >
-        <div
-          class="list-button mt-2 mb-2"
-        >
-          <button
-            class="button is-small"
-            data-testid="addNew"
-            type="button"
+            Name
+          </label>
+          <div
+            class="control has-icons-left"
           >
+            <input
+              class="input"
+              data-testid="name"
+              name="name"
+              placeholder="Enter list name"
+              value=""
+            />
             <span
-              class="icon is-small"
+              class="icon is-small is-left"
             >
               <i
-                class="fas fa-plus"
+                class="fas fa-list"
               />
             </span>
-            <span>
-              Add
-            </span>
-          </button>
+          </div>
+          <p
+            class="help is-danger"
+            data-testid="nameErrors"
+          />
         </div>
         <div
-          class="dnd-list"
-          data-rbd-droppable-context-id="3"
-          data-rbd-droppable-id="-1"
-        />
-      </div>
-    </div>
-    <div
-      class="field is-grouped"
-    >
-      <div
-        class="control"
-      >
-        <button
-          class="button"
-          data-testid="submit"
-          type="submit"
+          class="field"
         >
-          CREATE
-        </button>
-      </div>
-      <div
-        class="control ml-auto is-pulled-right"
-      >
-        <button
-          class="button"
-          data-testid="cancel"
-          type="button"
+          <label
+            class="label"
+            for="categoryId"
+          >
+            Category
+          </label>
+          <div
+            class="control has-icons-left"
+          >
+            <select
+              class="input"
+              data-testid="categoryId"
+              name="categoryId"
+            >
+              <option
+                value=""
+              >
+                Select a category
+              </option>
+              <option
+                value="1"
+              >
+                category1
+              </option>
+              <option
+                value="2"
+              >
+                category2
+              </option>
+            </select>
+            <span
+              class="icon is-small is-left"
+            >
+              <i
+                class="fas fa-tags"
+              />
+            </span>
+          </div>
+          <p
+            class="help is-danger"
+            data-testid="categoryIdErrors"
+          />
+        </div>
+        <div
+          class="mt-6"
         >
-          CANCEL
-        </button>
-      </div>
+          <div
+            class="level is-mobile mb-3"
+          >
+            <div
+              class="level-left"
+            >
+              <span
+                class="title is-5"
+              >
+                <span
+                  class="icon mr-1 has-text-primary"
+                >
+                  <i
+                    class="fas fa-clipboard-list"
+                  />
+                </span>
+                List Items
+              </span>
+            </div>
+            <div
+              class="level-right"
+            >
+              <button
+                class="button is-primary is-small"
+                data-testid="addNew"
+                type="button"
+              >
+                <span
+                  class="icon is-small"
+                >
+                  <i
+                    class="fas fa-plus"
+                  />
+                </span>
+                <span>
+                  Add Item
+                </span>
+              </button>
+            </div>
+          </div>
+          <div
+            class="dnd-container"
+          >
+            <div
+              class="dnd-list"
+              data-rbd-droppable-context-id="3"
+              data-rbd-droppable-id="-1"
+            >
+              <div
+                class="has-text-centered py-4 has-text-grey"
+              >
+                <span
+                  class="icon is-medium"
+                >
+                  <i
+                    class="fas fa-clipboard-list fa-2x"
+                  />
+                </span>
+                <p
+                  class="mt-2"
+                >
+                  No items yet. Click "Add Item" to create one!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="field is-grouped is-grouped-right mt-6"
+        >
+          <div
+            class="control"
+          >
+            <button
+              class="button is-light"
+              data-testid="cancel"
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
+          <div
+            class="control"
+          >
+            <button
+              class="button is-primary"
+              data-testid="submit"
+              type="submit"
+            >
+              <span
+                class="icon"
+              >
+                <i
+                  class="fas fa-save"
+                />
+              </span>
+              <span>
+                Create List
+              </span>
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
-  </form>
+  </div>
 </DocumentFragment>
 `;

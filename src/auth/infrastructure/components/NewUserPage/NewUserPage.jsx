@@ -5,15 +5,19 @@ import { User } from "../../../domain";
 
 export const NewUserPage = () => {
   return (
-    <div className="container">
-      <Breadcrumb
-        items={[
-          { url: "/users", text: "Users" },
-          { url: "/users/new", text: "New" },
-        ]}
-      />
-      <h3 className="title">New user</h3>
-      <UserForm user={User.createEmpty()} />
-    </div>
+    <section className="section">
+      <div className="container">
+        <div className="max-w-600 mx-auto">
+          <Breadcrumb
+            items={[
+              { url: "/users", text: "Users" },
+              { url: "/users/new", text: "New" },
+            ]}
+          />
+          <h1 className="title is-3 mb-5">New User</h1>
+          <UserForm user={User.createEmpty()} />
+        </div>
+      </div>
+    </section>
   );
 };

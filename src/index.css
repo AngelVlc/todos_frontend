@@ -25,6 +25,73 @@ code {
 
 /* Hero gradient for login */
 .hero.is-primary {
+  background: linear-gradient(135deg, #e0e7ff 0%, #d1c4e9 100%);
+}
+
+/* Smooth transitions for buttons */
+.button {
+  transition: all 0.2s ease;
+}
+
+/* Better spacing for forms */
+.field {
+  margin-bottom: 1rem;
+}
+
+/* Dropdown icon rotation */
+.fa-chevron-down.is-rotated {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+/* Navbar improvements */
+.navbar-item.is-clickable:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Container max widths */
+.max-w-600 {
+  max-width: 600px;
+}
+
+.max-w-800 {
+  max-width: 800px;
+}
+
+/* Timeline for list items */
+.timeline {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #e0e7ff;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Card hover effects */
+.card.is-hoverable {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card.is-hoverable:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+/* Hero gradient for login */
+.hero.is-primary {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 

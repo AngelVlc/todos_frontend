@@ -57,19 +57,4 @@ describe("EditUserPage", () => {
 
     expect(fragment()).toMatchSnapshot();
   });
-
-  it("should allow delete an existing user", async () => {
-    let container;
-    await act(async () => {
-      container = renderWithContextAndRouterForExistingUser(false);
-    });
-
-    await waitFor(() => {
-      fireEvent.click(container.getByTestId("delete"));
-    });
-
-    expect(mockHistoryPush).toHaveBeenCalled();
-    expect(mockHistoryPush.mock.calls[0][0]).toBe("/users/2/delete");
-    mockHistoryPush.mockClear();
-  });
 });

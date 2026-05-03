@@ -23,36 +23,38 @@ export const EditListPage = () => {
   }, [listId, getExistingList]);
 
   return (
-    <>
+    <section className="section">
       {pageState && (
         <div className="container">
-          <Breadcrumb
-            items={[
-              { url: "/lists", text: "Lists" },
-              {
-                url: `/lists/${listId}`,
-                text: pageState.name,
-              },
-            ]}
-          />
-          <h3 className="title">{`Edit list '${pageState.name}'`}</h3>
-          <ListForm
-            list={pageState}
-            preCancel={
-              <div className="control">
-                <button
-                  className="button"
-                  data-testid="read"
-                  type="button"
-                  onClick={() => history.push(`/lists/${listId}/read`)}
-                >
-                  READ
-                </button>
-              </div>
-            }
-          />
+          <div className="max-w-800 mx-auto">
+            <Breadcrumb
+              items={[
+                { url: "/lists", text: "Lists" },
+                {
+                  url: `/lists/${listId}`,
+                  text: pageState.name,
+                },
+              ]}
+            />
+            <h1 className="title is-3 mb-5">{`Edit list '${pageState.name}'`}</h1>
+            <ListForm
+              list={pageState}
+              preCancel={
+                <div className="control">
+                  <button
+                    className="button"
+                    data-testid="read"
+                    type="button"
+                    onClick={() => history.push(`/lists/${listId}/read`)}
+                  >
+                    READ
+                  </button>
+                </div>
+              }
+            />
+          </div>
         </div>
       )}
-    </>
+    </section>
   );
 };

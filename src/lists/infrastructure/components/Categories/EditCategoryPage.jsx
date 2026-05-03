@@ -22,22 +22,24 @@ export const EditCategoryPage = () => {
   }, [categoryId, getExistingCategory]);
 
   return (
-    <>
+    <section className="section">
       {pageState && (
         <div className="container">
-          <Breadcrumb
-            items={[
-              { url: "/categories", text: "Categories" },
-              {
-                url: `/categories/${categoryId}`,
-                text: pageState.name,
-              },
-            ]}
-          />
-          <h3 className="title">{`Edit category '${pageState.name}'`}</h3>
-          <CategoryForm category={pageState} />
+          <div className="max-w-600 mx-auto">
+            <Breadcrumb
+              items={[
+                { url: "/categories", text: "Categories" },
+                {
+                  url: `/categories/${categoryId}`,
+                  text: pageState.name,
+                },
+              ]}
+            />
+            <h1 className="title is-3 mb-5">{`Edit category '${pageState.name}'`}</h1>
+            <CategoryForm category={pageState} />
+          </div>
         </div>
       )}
-    </>
+    </section>
   );
 };

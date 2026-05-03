@@ -129,113 +129,160 @@ export const ListForm = (props) => {
       <Modal ref={itemFormModalRef} closeHandler={onItemModalClose} showOk={true}>
         <ListItemForm ref={itemFormRef} onSubmit={onSubmitItemForm} />
       </Modal>
+      <div className="card is-shadowless">
+        <div className="card-content">
       <Formik
         enableReinitialize={true}
         initialValues={pageState}
+        validateOnChange={false}
+        validateOnBlur={false}
         validationSchema={Yup.object({
           name: Yup.string().required("Required"),
         })}
         onSubmit={onSubmit}
       >
-        <Form>
-          <div className="field">
-            <label className="label" htmlFor="name">
-              Name
-            </label>
-            <div className="control">
-              <Field name="name" as="input" className="input" data-testid="name" autoFocus />
-            </div>
-            <p className="help is-danger" data-testid="nameErrors">
-              <ErrorMessage name="name" />
-            </p>
-          </div>
-          <div className="field">
-            <label className="label" htmlFor="categoryId">
-              Category
-            </label>
-            <div className="control">
-              <Field name="categoryId" as="select" className="input" data-testid="categoryId">
-                <option value=""></option>
-                {categories &&
-                  categories.map((category) => (
-                    <option key={category.id} value={category.id}>
-                      {category.name}
-                    </option>
-                  ))}
-              </Field>
-            </div>
-            <p className="help is-danger" data-testid="categoryIdErrors">
-              <ErrorMessage name="categoryId" />
-            </p>
-          </div>
-          <div>
-            <div className="is-flex">
-              <div className="is-flex-grow-4">
-                <span className="label">List Items</span>
+            <Form>
+              <div className="field">
+                <label className="label" htmlFor="name">
+                  Name
+                </label>
+                <div className="control has-icons-left">
+                  <Field name="name" as="input" className="input" data-testid="name" autoFocus placeholder="Enter list name" />
+                  <span className="icon is-small is-left">
+                    <i className="fas fa-list"></i>
+                  </span>
+                </div>
+                <p className="help is-danger" data-testid="nameErrors">
+                  <ErrorMessage name="name" />
+                </p>
               </div>
-            </div>
-            <DragDropContext onDragEnd={onDragEnd}>
-              <div className="dnd-container">
-                <div className="list-button mt-2 mb-2">
-                  <button className="button is-small" type="button" data-testid="addNew" onClick={() => onAddNewItem()}>
-                    <span className="icon is-small">
-                      <i className="fas fa-plus"></i>
+              <div className="field">
+                <label className="label" htmlFor="categoryId">
+                  Category
+                </label>
+                <div className="control has-icons-left">
+                  <Field name="categoryId" as="select" className="input" data-testid="categoryId">
+                    <option value="">Select a category</option>
+                    {categories &&
+                      categories.map((category) => (
+                        <option key={category.id} value={category.id}>
+                          {category.name}
+                        </option>
+                      ))}
+                  </Field>
+                  <span className="icon is-small is-left">
+                    <i className="fas fa-tags"></i>
+                  </span>
+                </div>
+                <p className="help is-danger" data-testid="categoryIdErrors">
+                  <ErrorMessage name="categoryId" />
+                </p>
+              </div>
+              <div className="mt-6">
+                <div className="level is-mobile mb-3">
+                  <div className="level-left">
+                    <span className="title is-5">
+                      <span className="icon mr-1 has-text-primary">
+                        <i className="fas fa-clipboard-list"></i>
+                      </span>
+                      List Items
                     </span>
-                    <span>Add</span>
+                  </div>
+                  <div className="level-right">
+                    <button className="button is-primary is-small" type="button" data-testid="addNew" onClick={() => onAddNewItem()}>
+                      <span className="icon is-small">
+                        <i className="fas fa-plus"></i>
+                      </span>
+                      <span>Add Item</span>
+                    </button>
+                  </div>
+                </div>
+                <DragDropContext onDragEnd={onDragEnd}>
+                  <div className="dnd-container">
+                    <Droppable droppableId={props.list.id.toString()}>
+                      {(provided) => (
+                        <div className="dnd-list" ref={provided.innerRef} {...provided.droppableProps}>
+                          {pageState.items.length > 0 ? (
+                            pageState.items.map((item, index) => (
+                              <Draggable key={item.id} draggableId={item.id.toString()} index={index}>
+                                {(draggableProvided) => (
+                                  <div
+                                    key={item.id}
+                                    className="card mb-2 p-3"
+                                    {...draggableProvided.draggableProps}
+                                    {...draggableProvided.dragHandleProps}
+                                    ref={draggableProvided.innerRef}
+                                    data-testid={`draggable${item.id}`}
+                                  >
+                                    <div className="is-flex is-align-items-center">
+                                      <div className="is-flex-grow-4" data-testid={`editListItem${item.id}`} onClick={() => onEditItem(item)} style={{cursor: 'pointer'}}>
+                                        <span className="has-text-weight-semibold">{item.title}</span>
+                                        {item.description && (
+                                          <p className="is-size-7 has-text-grey mt-1">{item.description}</p>
+                                        )}
+                                      </div>
+                                      <div className="is-flex is-align-items-center">
+                                        <button 
+                                          type="button" 
+                                          className="button is-small is-info is-light mr-2"
+                                          data-testid={`moveListItem${item.id}`}
+                                          onClick={() => history.push(`/lists/${props.list.id}/moveItem/${item.id}`)}
+                                        >
+                                          <span className="icon is-small">
+                                            <i className="fas fa-dolly"></i>
+                                          </span>
+                                        </button>
+                                        <button 
+                                          type="button" 
+                                          className="button is-small is-danger is-light" 
+                                          data-testid={`deleteListItem${item.id}`} 
+                                          onClick={() => onDeleteListItem(item)}
+                                        >
+                                          <span className="icon is-small">
+                                            <i className="fas fa-trash"></i>
+                                          </span>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                )}
+                              </Draggable>
+                            ))
+                          ) : (
+                            <div className="has-text-centered py-4 has-text-grey">
+                              <span className="icon is-medium">
+                                <i className="fas fa-clipboard-list fa-2x"></i>
+                              </span>
+                              <p className="mt-2">No items yet. Click "Add Item" to create one!</p>
+                            </div>
+                          )}
+                          {provided.placeholder}
+                        </div>
+                      )}
+                    </Droppable>
+                  </div>
+                </DragDropContext>
+              </div>
+              <div className="field is-grouped is-grouped-right mt-6">
+                <div className="control">
+                  <button className="button is-light" data-testid="cancel" type="button" onClick={() => history.push("/lists")}>
+                    Cancel
                   </button>
                 </div>
-                <Droppable droppableId={props.list.id.toString()}>
-                  {(provided) => (
-                    <div className="dnd-list" ref={provided.innerRef} {...provided.droppableProps}>
-                      {pageState.items.length > 0 &&
-                        pageState.items.map((item, index) => (
-                          <Draggable key={item.id} draggableId={item.id.toString()} index={index}>
-                            {(draggableProvided) => (
-                              <div
-                                key={item.id}
-                                className="is-flex dnd-item p-2 mb-2"
-                                {...draggableProvided.draggableProps}
-                                {...draggableProvided.dragHandleProps}
-                                ref={draggableProvided.innerRef}
-                                data-testid={`draggable${item.id}`}
-                              >
-                                <div className="is-flex-grow-4" data-testid={`editListItem${item.id}`} onClick={() => onEditItem(item)}>
-                                  <span className="has-text-black">{item.title}</span>
-                                </div>
-                                <div className="is-justify-content-flex-end">
-                                  <center>
-                                    <span className="icon is-clickable rounded-button" onClick={() => history.push(`/lists/${props.list.id}/moveItem/${item.id}`)}>
-                                      <i className="fas fa-dolly fa-xs"></i>
-                                    </span>
-                                    <button type="button" className="delete ml-2" data-testid={`deleteListItem${item.id}`} onClick={() => onDeleteListItem(item)}></button>
-                                  </center>
-                                </div>
-                              </div>
-                            )}
-                          </Draggable>
-                        ))}
-                      {provided.placeholder}
-                    </div>
-                  )}
-                </Droppable>
+                <>{props.preCancel}</>
+                <div className="control">
+                  <button className="button is-primary" data-testid="submit" type="submit">
+                    <span className="icon">
+                      <i className="fas fa-save"></i>
+                    </span>
+                    <span>{props.list?.id > 0 ? "Save Changes" : "Create List"}</span>
+                  </button>
+                </div>
               </div>
-            </DragDropContext>
-          </div>
-          <div className="field is-grouped">
-            <div className="control">
-              <button className="button" data-testid="submit" type="submit">
-                {props.list?.id > 0 ? "SAVE" : "CREATE"}
-              </button>
-            </div>
-            <>{props.preCancel}</>
-            <div className="control ml-auto is-pulled-right">
-              <button className="button" data-testid="cancel" type="button" onClick={() => history.push("/lists")}>
-                CANCEL
-              </button>
-            </div>
-          </div>
-        </Form>
-      </Formik>
+            </Form>
+          </Formik>
+        </div>
+      </div>
     </>
   );
 };

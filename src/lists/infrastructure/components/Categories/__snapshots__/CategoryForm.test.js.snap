@@ -2,166 +2,236 @@
 
 exports[`CategoryForm should match the snapshot for a new category 1`] = `
 <DocumentFragment>
-  <form
-    action="#"
+  <div
+    class="card is-shadowless"
   >
     <div
-      class="field"
+      class="card-content"
     >
-      <label
-        class="label"
-        for="name"
+      <form
+        action="#"
       >
-        Name
-      </label>
-      <div
-        class="control"
-      >
-        <input
-          data-testid="name"
-          name="name"
-          type="text"
-          value=""
-        />
-      </div>
-      <p
-        class="help is-danger"
-        data-testid="nameErrors"
-      />
-    </div>
-    <div
-      class="field"
-    >
-      <label
-        class="label"
-        for="description"
-      >
-        Description
-      </label>
-      <div
-        class="control"
-      >
-        <input
-          data-testid="description"
-          name="description"
-          type="text"
-          value=""
-        />
-      </div>
-      <p
-        class="help is-danger"
-        data-testid="descriptionErrors"
-      />
-    </div>
-    <div
-      class="field is-grouped"
-    >
-      <div
-        class="control"
-      >
-        <button
-          class="button"
-          data-testid="submit"
-          type="submit"
+        <div
+          class="field"
         >
-          CREATE
-        </button>
-      </div>
-      <div
-        class="control"
-      >
-        <button
-          class="button"
-          data-testid="cancel"
-          type="button"
+          <label
+            class="label"
+            for="name"
+          >
+            Name
+          </label>
+          <div
+            class="control has-icons-left"
+          >
+            <input
+              class="input"
+              data-testid="name"
+              name="name"
+              placeholder="Enter category name"
+              type="text"
+              value=""
+            />
+            <span
+              class="icon is-small is-left"
+            >
+              <i
+                class="fas fa-tag"
+              />
+            </span>
+          </div>
+          <p
+            class="help is-danger"
+            data-testid="nameErrors"
+          />
+        </div>
+        <div
+          class="field"
         >
-          CANCEL
-        </button>
-      </div>
+          <label
+            class="label"
+            for="description"
+          >
+            Description
+          </label>
+          <div
+            class="control has-icons-left"
+          >
+            <input
+              class="input"
+              data-testid="description"
+              name="description"
+              placeholder="Enter description (optional)"
+              type="text"
+              value=""
+            />
+            <span
+              class="icon is-small is-left"
+            >
+              <i
+                class="fas fa-align-left"
+              />
+            </span>
+          </div>
+          <p
+            class="help is-danger"
+            data-testid="descriptionErrors"
+          />
+        </div>
+        <div
+          class="field is-grouped is-grouped-right mt-6"
+        >
+          <div
+            class="control"
+          >
+            <button
+              class="button is-light"
+              data-testid="cancel"
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
+          <div
+            class="control"
+          >
+            <button
+              class="button is-link"
+              data-testid="submit"
+              type="submit"
+            >
+              <span
+                class="icon"
+              >
+                <i
+                  class="fas fa-save"
+                />
+              </span>
+              <span>
+                Create Category
+              </span>
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
-  </form>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`CategoryForm should match the snapshot for an existing category 1`] = `
 <DocumentFragment>
-  <form
-    action="#"
+  <div
+    class="card is-shadowless"
   >
     <div
-      class="field"
+      class="card-content"
     >
-      <label
-        class="label"
-        for="name"
+      <form
+        action="#"
       >
-        Name
-      </label>
-      <div
-        class="control"
-      >
-        <input
-          data-testid="name"
-          name="name"
-          type="text"
-          value="category"
-        />
-      </div>
-      <p
-        class="help is-danger"
-        data-testid="nameErrors"
-      />
-    </div>
-    <div
-      class="field"
-    >
-      <label
-        class="label"
-        for="description"
-      >
-        Description
-      </label>
-      <div
-        class="control"
-      >
-        <input
-          data-testid="description"
-          name="description"
-          type="text"
-          value="desc"
-        />
-      </div>
-      <p
-        class="help is-danger"
-        data-testid="descriptionErrors"
-      />
-    </div>
-    <div
-      class="field is-grouped"
-    >
-      <div
-        class="control"
-      >
-        <button
-          class="button"
-          data-testid="submit"
-          type="submit"
+        <div
+          class="field"
         >
-          SAVE
-        </button>
-      </div>
-      <div
-        class="control"
-      >
-        <button
-          class="button"
-          data-testid="cancel"
-          type="button"
+          <label
+            class="label"
+            for="name"
+          >
+            Name
+          </label>
+          <div
+            class="control has-icons-left"
+          >
+            <input
+              class="input"
+              data-testid="name"
+              name="name"
+              placeholder="Enter category name"
+              type="text"
+              value="category"
+            />
+            <span
+              class="icon is-small is-left"
+            >
+              <i
+                class="fas fa-tag"
+              />
+            </span>
+          </div>
+          <p
+            class="help is-danger"
+            data-testid="nameErrors"
+          />
+        </div>
+        <div
+          class="field"
         >
-          CANCEL
-        </button>
-      </div>
+          <label
+            class="label"
+            for="description"
+          >
+            Description
+          </label>
+          <div
+            class="control has-icons-left"
+          >
+            <input
+              class="input"
+              data-testid="description"
+              name="description"
+              placeholder="Enter description (optional)"
+              type="text"
+              value="desc"
+            />
+            <span
+              class="icon is-small is-left"
+            >
+              <i
+                class="fas fa-align-left"
+              />
+            </span>
+          </div>
+          <p
+            class="help is-danger"
+            data-testid="descriptionErrors"
+          />
+        </div>
+        <div
+          class="field is-grouped is-grouped-right mt-6"
+        >
+          <div
+            class="control"
+          >
+            <button
+              class="button is-light"
+              data-testid="cancel"
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
+          <div
+            class="control"
+          >
+            <button
+              class="button is-link"
+              data-testid="submit"
+              type="submit"
+            >
+              <span
+                class="icon"
+              >
+                <i
+                  class="fas fa-save"
+                />
+              </span>
+              <span>
+                Save Changes
+              </span>
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
-  </form>
+  </div>
 </DocumentFragment>
 `;
