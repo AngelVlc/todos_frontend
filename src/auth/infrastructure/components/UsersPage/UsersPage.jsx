@@ -36,9 +36,9 @@ export const UsersPage = () => {
                 onClick={() => history.push("users/new")}
               >
                 <span className="icon">
-                  <i className="fas fa-user-plus"></i>
+                  <i className="fas fa-plus"></i>
                 </span>
-                <span>New User</span>
+                <span>Add User</span>
               </button>
             </div>
           </div>
@@ -101,9 +101,9 @@ export const UsersPage = () => {
                 onClick={() => history.push("users/new")}
               >
                 <span className="icon">
-                  <i className="fas fa-user-plus"></i>
+                  <i className="fas fa-plus"></i>
                 </span>
-                <span>Create User</span>
+                <span>Add User</span>
               </button>
             </div>
           )}

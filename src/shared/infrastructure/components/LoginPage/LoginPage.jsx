@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { AppContext } from '../../contexts';
-import { useHistory, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { userLoggedIn, userLoggedOut } from '../../actions';
 import * as Yup from 'yup';
@@ -10,7 +10,6 @@ import jwtDecode from 'jwt-decode';
 export const LoginPage = () => {
     const { auth, authDispatch } = useContext(AppContext);
     const [authError, setAuthError] = useState(null);
-    let history = useHistory();
 
     useEffect(() => {
         authDispatch(userLoggedOut());
@@ -38,12 +37,12 @@ export const LoginPage = () => {
     }
 
     return (
-        <section className="hero is-fullheight" style={{minHeight: '100vh', height: '100vh', overflow: 'hidden'}}>
-            <div className="hero-body" style={{display: 'flex', alignItems: 'center'}}>
-                <div className="container">
+        <section className="hero is-fullheight">
+            <div className="hero-body" style={{minHeight: '100vh', height: '100vh', overflow: 'hidden'}}>
+                <div className="container" style={{padding: '0 1rem'}}>
                     <div className="columns is-centered">
-                        <div className="column is-4">
-                            <div className="box has-text-centered" style={{padding: '2rem', maxWidth: '400px', margin: '0 auto'}}>
+                        <div className="column is-4 is-full-mobile">
+                            <div className="box has-text-centered" style={{padding: '2rem', maxWidth: '400px', margin: '0 auto', width: '100%'}}>
                                 <Formik
                                     initialValues={{
                                         username: '',

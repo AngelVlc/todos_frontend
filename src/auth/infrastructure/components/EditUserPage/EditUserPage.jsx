@@ -6,7 +6,6 @@ import { AppContext } from "../../../../shared/infrastructure/contexts";
 import { GetUserByIdUseCase } from "../../../application/users";
 
 export const EditUserPage = () => {
-  let history = useHistory();
   let { userId } = useParams();
   const { useCaseFactory } = useContext(AppContext);
   const [pageState, setUser] = useState();

@@ -93,7 +93,7 @@ export const ListsPage = () => {
                     <span className="icon">
                       <i className="fas fa-plus"></i>
                     </span>
-                    <span>New List</span>
+                    <span>Add List</span>
                   </button>
                 </div>
               </div>
@@ -153,7 +153,7 @@ export const ListsPage = () => {
                 <span className="icon">
                   <i className="fas fa-plus"></i>
                 </span>
-                <span>Create List</span>
+                <span>Add List</span>
               </button>
             </div>
           )}

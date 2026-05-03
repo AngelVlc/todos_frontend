@@ -69,10 +69,12 @@ code {
 /* Container max widths */
 .max-w-600 {
   max-width: 600px;
+  width: 100%;
 }
 
 .max-w-800 {
   max-width: 800px;
+  width: 100%;
 }
 
 /* Timeline for list items */
@@ -117,6 +119,171 @@ code {
 .title.is-3 {
   color: #1f2937;
   font-weight: 700;
+}
+
+/* Responsive improvements */
+@media screen and (max-width: 768px) {
+  /* Reduce section padding on mobile */
+  .section {
+    padding: 1rem 0.75rem;
+  }
+
+  /* Smaller titles on mobile */
+  .title.is-3 {
+    font-size: 1.25rem;
+  }
+
+  .title.is-5 {
+    font-size: 1rem;
+  }
+
+  /* More spacing for level with titles and buttons */
+  .level.is-mobile {
+    margin-bottom: 1rem;
+  }
+
+  .level.is-mobile .level-left,
+  .level.is-mobile .level-right {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Stack buttons vertically on mobile with full width */
+  .field.is-grouped {
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+  }
+
+  .field.is-grouped .control {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .field.is-grouped .control button {
+    width: 100%;
+  }
+
+  /* Stack level items on mobile */
+  .level.is-mobile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .level-left,
+  .level-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .level-right {
+    margin-top: 1rem;
+    align-items: stretch;
+  }
+
+  /* Table scroll on mobile */
+  .table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table-container table {
+    min-width: 600px;
+  }
+
+  /* Reduce breadcrumb padding on mobile */
+  .breadcrumb {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Smaller hero padding on mobile */
+  .hero-body {
+    padding: 1.5rem 1rem;
+  }
+
+  /* Card content padding on mobile */
+  .card-content {
+    padding: 1rem;
+  }
+
+  /* Navbar items on mobile */
+  .navbar-menu {
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+
+  .navbar-item.is-clickable {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #f3f4f6;
+  }
+
+  /* Pagination responsive */
+  .pagination-container {
+    overflow-x: auto;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .page-size-selector {
+    margin-top: 0.5rem;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Level mobile adjustments */
+  .level.is-mobile > .level-item:not(.is-narrow) {
+    flex-grow: 1;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+  /* Even smaller titles */
+  .title.is-3 {
+    font-size: 1.125rem;
+  }
+
+  /* Reduce input padding */
+  .input {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  /* Stack buttons vertically with proper order */
+  .field.is-grouped-right {
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+  }
+
+  .field.is-grouped-right .control {
+    width: 100%;
+  }
+
+  .field.is-grouped-right .control button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+
+  /* Make primary button more prominent on mobile */
+  .field.is-grouped-right .control .button.is-primary {
+    order: -1;
+  }
+
+  /* Smaller icons on mobile */
+  .icon.is-large {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  /* Adjust card padding on very small screens */
+  .card-content {
+    padding: 0.75rem;
+  }
 }
 
 code {
