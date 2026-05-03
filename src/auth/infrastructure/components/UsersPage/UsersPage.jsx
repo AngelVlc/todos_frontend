@@ -21,63 +21,94 @@ export const UsersPage = () => {
   }, [getUsers]);
 
   return (
-    <>
-      {users && (
+    <section className="section">
+      {users !== undefined && (
         <div className="container">
           <Breadcrumb items={[{ url: "/users", text: "Users" }]} />
-          <h3 className="title">USERS</h3>
-          <table className="table">
-            <thead>
-              <tr>
-                <td>User</td>
-                <td>Admin?</td>
-                <td>
-                  <button
-                    className="button is-small"
-                    data-testid="addNew"
-                    onClick={() => history.push("users/new")}
-                  >
-                    <span className="icon is-small">
-                      <i className="fas fa-plus"></i>
-                    </span>
-                  </button>
-                </td>
-              </tr>
-            </thead>
-            <tbody>
-              {users.length > 0 &&
-                users.map((user) => (
-                  <tr
-                    className="is-clickable"
-                    key={user.id}
-                    onClick={() => history.push(`/users/${user.id}/edit`)}
-                    data-testid={`editUser${user.id}`}
-                  >
-                    <td>{user.name}</td>
-                    <td>
-                      {user.isAdmin && (
-                        <center>
-                          <span className="icon is-small">
-                            <i className="fas fa-check fa-xs"></i>
+          <div className="level is-mobile mb-4">
+            <div className="level-left">
+              <h1 className="title is-3 mb-0">Users</h1>
+            </div>
+            <div className="level-right">
+              <button
+                className="button is-primary"
+                data-testid="addNew"
+                onClick={() => history.push("users/new")}
+              >
+                <span className="icon">
+                  <i className="fas fa-user-plus"></i>
+                </span>
+                <span>New User</span>
+              </button>
+            </div>
+          </div>
+          
+          {users.length > 0 ? (
+            <div className="table-container">
+              <table className="table is-fullwidth is-striped is-hoverable">
+                <thead>
+                  <tr>
+                    <th>User</th>
+                    <th className="has-text-centered">Role</th>
+                    <th className="has-text-right">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {users.map((user) => (
+                    <tr
+                      className="is-clickable"
+                      key={user.id}
+                      onClick={() => history.push(`/users/${user.id}/edit`)}
+                      data-testid={`editUser${user.id}`}
+                    >
+                      <td className="has-text-weight-semibold">{user.name}</td>
+                      <td className="has-text-centered">
+                        {user.isAdmin ? (
+                          <span className="tag is-info is-light">
+                            <span className="icon is-small">
+                              <i className="fas fa-shield-alt"></i>
+                            </span>
+                            <span>Admin</span>
                           </span>
-                        </center>
-                      )}
-                    </td>
-                    <td onClick={(e) => e.stopPropagation()}>
-                      <center>
+                        ) : (
+                          <span className="tag is-light">User</span>
+                        )}
+                      </td>
+                      <td className="has-text-right" onClick={(e) => e.stopPropagation()}>
                         <Link
-                          className="has-text-black delete"
+                          className="button is-small is-danger is-light"
                           data-testid={`deleteUser${user.id}`}
                           to={`/users/${user.id}/delete`}
-                        ></Link>
-                      </center>
-                    </td>
-                  </tr>
-                ))}
-            </tbody>
-          </table>
+                        >
+                          <span className="icon is-small">
+                            <i className="fas fa-trash"></i>
+                          </span>
+                        </Link>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <div className="has-text-centered py-6">
+              <span className="icon is-large has-text-grey-light">
+                <i className="fas fa-users fa-3x"></i>
+              </span>
+              <p className="mt-4 mb-4">No users found. Create your first one!</p>
+              <button
+                className="button is-primary"
+                onClick={() => history.push("users/new")}
+              >
+                <span className="icon">
+                  <i className="fas fa-user-plus"></i>
+                </span>
+                <span>Create User</span>
+              </button>
+            </div>
+          )}
         </div>
       )}
-    </>
+    </section>
   );
 };

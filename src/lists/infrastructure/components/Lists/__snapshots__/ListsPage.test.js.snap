@@ -2,175 +2,248 @@
 
 exports[`ListsPage should match the snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="modal"
-    data-testid="modal"
+  <section
+    class="section"
   >
     <div
-      class="modal-background"
-    />
-    <div
-      class="modal-content"
+      class="modal"
+      data-testid="modal"
     >
       <div
-        class="box"
+        class="modal-background"
+      />
+      <div
+        class="modal-content"
       >
         <div
-          class="content"
-        >
-          <center>
-            <h5>
-              Algolia not configured
-            </h5>
-          </center>
-        </div>
-        <div
-          class="field is-grouped is-justify-content-center"
+          class="box"
         >
           <div
-            class="control"
+            class="content"
           >
-            <button
-              class="button"
-              data-testid="modalCancel"
+            <center>
+              <h5>
+                Algolia not configured
+              </h5>
+            </center>
+          </div>
+          <div
+            class="field is-grouped is-justify-content-center"
+          >
+            <div
+              class="control"
             >
-              CANCEL
-            </button>
+              <button
+                class="button"
+                data-testid="modalCancel"
+              >
+                CANCEL
+              </button>
+            </div>
           </div>
         </div>
       </div>
+      <button
+        aria-label="close"
+        class="modal-close is-large"
+        data-testid="modalClose"
+      />
     </div>
-    <button
-      aria-label="close"
-      class="modal-close is-large"
-      data-testid="modalClose"
-    />
-  </div>
-  <div
-    class="container"
-  >
-    <nav
-      aria-label="breadcrumbs"
-      class="breadcrumb"
+    <div
+      class="container"
     >
-      <ul>
-        <li>
-          <a
-            href="/"
+      <nav
+        aria-label="breadcrumbs"
+        class="breadcrumb"
+      >
+        <ul>
+          <li>
+            <a
+              href="/"
+            >
+              Home
+            </a>
+          </li>
+          <li
+            class="is-active"
           >
-            Home
-          </a>
-        </li>
-        <li
-          class="is-active"
+            <a
+              aria-current="page"
+              href="/lists"
+            >
+              Lists
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="level is-mobile mb-4"
+      >
+        <div
+          class="level-left"
         >
-          <a
-            aria-current="page"
-            href="/lists"
+          <h1
+            class="title is-3 mb-0"
           >
             Lists
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <h3
-      class="title"
-    >
-      LISTS
-    </h3>
-    <table
-      class="table"
-    >
-      <thead>
-        <tr>
-          <td>
-            Name
-          </td>
-          <td>
-            Category
-          </td>
-          <td>
-            # Items
-          </td>
-          <td>
-            <button
-              class="button is-small mr-2"
-              data-testid="search"
-            >
-              <span
-                class="icon is-small"
-              >
-                <i
-                  class="fas fa-search"
-                />
-              </span>
-            </button>
-            <button
-              class="button is-small"
-              data-testid="addNew"
-            >
-              <span
-                class="icon is-small"
-              >
-                <i
-                  class="fas fa-plus"
-                />
-              </span>
-            </button>
-          </td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          class="is-clickable"
-          data-testid="viewList1"
+          </h1>
+        </div>
+        <div
+          class="level-right"
         >
-          <td>
-            list1
-          </td>
-          <td>
-            category1
-          </td>
-          <td>
-            <center>
-              4
-            </center>
-          </td>
-          <td>
-            <center>
-              <a
-                class="has-text-black delete"
-                data-testid="deleteList1"
-                href="/lists/1/delete"
-              />
-            </center>
-          </td>
-        </tr>
-        <tr
-          class="is-clickable"
-          data-testid="viewList2"
+          <div
+            class="field is-grouped"
+          >
+            <div
+              class="control"
+            >
+              <button
+                class="button is-info is-light"
+                data-testid="search"
+              >
+                <span
+                  class="icon"
+                >
+                  <i
+                    class="fas fa-search"
+                  />
+                </span>
+                <span>
+                  Search
+                </span>
+              </button>
+            </div>
+            <div
+              class="control"
+            >
+              <button
+                class="button is-primary"
+                data-testid="addNew"
+              >
+                <span
+                  class="icon"
+                >
+                  <i
+                    class="fas fa-plus"
+                  />
+                </span>
+                <span>
+                  New List
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="table-container"
+      >
+        <table
+          class="table is-fullwidth is-striped is-hoverable"
         >
-          <td>
-            list2
-          </td>
-          <td />
-          <td>
-            <center>
-              6
-            </center>
-          </td>
-          <td>
-            <center>
-              <a
-                class="has-text-black delete"
-                data-testid="deleteList2"
-                href="/lists/2/delete"
-              />
-            </center>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+          <thead>
+            <tr>
+              <th>
+                Name
+              </th>
+              <th>
+                Category
+              </th>
+              <th
+                class="has-text-centered"
+              >
+                # Items
+              </th>
+              <th
+                class="has-text-right"
+              >
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              class="is-clickable"
+              data-testid="viewList1"
+            >
+              <td
+                class="has-text-weight-semibold"
+              >
+                list1
+              </td>
+              <td>
+                category1
+              </td>
+              <td
+                class="has-text-centered"
+              >
+                <span
+                  class="tag is-light is-info"
+                >
+                  4
+                </span>
+              </td>
+              <td
+                class="has-text-right"
+              >
+                <a
+                  class="button is-small is-danger is-light"
+                  data-testid="deleteList1"
+                  href="/lists/1/delete"
+                >
+                  <span
+                    class="icon is-small"
+                  >
+                    <i
+                      class="fas fa-trash"
+                    />
+                  </span>
+                </a>
+              </td>
+            </tr>
+            <tr
+              class="is-clickable"
+              data-testid="viewList2"
+            >
+              <td
+                class="has-text-weight-semibold"
+              >
+                list2
+              </td>
+              <td>
+                -
+              </td>
+              <td
+                class="has-text-centered"
+              >
+                <span
+                  class="tag is-light is-info"
+                >
+                  6
+                </span>
+              </td>
+              <td
+                class="has-text-right"
+              >
+                <a
+                  class="button is-small is-danger is-light"
+                  data-testid="deleteList2"
+                  href="/lists/2/delete"
+                >
+                  <span
+                    class="icon is-small"
+                  >
+                    <i
+                      class="fas fa-trash"
+                    />
+                  </span>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 </DocumentFragment>
 `;

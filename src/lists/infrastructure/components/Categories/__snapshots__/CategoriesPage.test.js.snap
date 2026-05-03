@@ -2,99 +2,145 @@
 
 exports[`CategoriesPage should match the snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="container"
+  <section
+    class="section"
   >
-    <nav
-      aria-label="breadcrumbs"
-      class="breadcrumb"
+    <div
+      class="container"
     >
-      <ul>
-        <li>
-          <a
-            href="/"
+      <nav
+        aria-label="breadcrumbs"
+        class="breadcrumb"
+      >
+        <ul>
+          <li>
+            <a
+              href="/"
+            >
+              Home
+            </a>
+          </li>
+          <li
+            class="is-active"
           >
-            Home
-          </a>
-        </li>
-        <li
-          class="is-active"
+            <a
+              aria-current="page"
+              href="/categories"
+            >
+              Categories
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="level is-mobile mb-4"
+      >
+        <div
+          class="level-left"
         >
-          <a
-            aria-current="page"
-            href="/categories"
+          <h1
+            class="title is-3 mb-0"
           >
             Categories
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <h3
-      class="title"
-    >
-      CATEGORIES
-    </h3>
-    <table
-      class="table"
-    >
-      <thead>
-        <tr>
-          <td>
-            Name
-          </td>
-          <td>
-            <button
-              class="button is-small"
-              data-testid="addNew"
+          </h1>
+        </div>
+        <div
+          class="level-right"
+        >
+          <button
+            class="button is-primary"
+            data-testid="addNew"
+          >
+            <span
+              class="icon"
             >
-              <span
-                class="icon is-small"
+              <i
+                class="fas fa-plus"
+              />
+            </span>
+            <span>
+              New Category
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="table-container"
+      >
+        <table
+          class="table is-fullwidth is-striped is-hoverable"
+        >
+          <thead>
+            <tr>
+              <th>
+                Name
+              </th>
+              <th
+                class="has-text-right"
               >
-                <i
-                  class="fas fa-plus"
-                />
-              </span>
-            </button>
-          </td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          class="is-clickable"
-          data-testid="viewCategory1"
-        >
-          <td>
-            category1
-          </td>
-          <td>
-            <center>
-              <a
-                class="has-text-black delete"
-                data-testid="deleteCategory1"
-                href="/categories/1/delete"
-              />
-            </center>
-          </td>
-        </tr>
-        <tr
-          class="is-clickable"
-          data-testid="viewCategory2"
-        >
-          <td>
-            category2
-          </td>
-          <td>
-            <center>
-              <a
-                class="has-text-black delete"
-                data-testid="deleteCategory2"
-                href="/categories/2/delete"
-              />
-            </center>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              class="is-clickable"
+              data-testid="viewCategory1"
+            >
+              <td
+                class="has-text-weight-semibold"
+              >
+                category1
+              </td>
+              <td
+                class="has-text-right"
+              >
+                <a
+                  class="button is-small is-danger is-light"
+                  data-testid="deleteCategory1"
+                  href="/categories/1/delete"
+                >
+                  <span
+                    class="icon is-small"
+                  >
+                    <i
+                      class="fas fa-trash"
+                    />
+                  </span>
+                </a>
+              </td>
+            </tr>
+            <tr
+              class="is-clickable"
+              data-testid="viewCategory2"
+            >
+              <td
+                class="has-text-weight-semibold"
+              >
+                category2
+              </td>
+              <td
+                class="has-text-right"
+              >
+                <a
+                  class="button is-small is-danger is-light"
+                  data-testid="deleteCategory2"
+                  href="/categories/2/delete"
+                >
+                  <span
+                    class="icon is-small"
+                  >
+                    <i
+                      class="fas fa-trash"
+                    />
+                  </span>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 </DocumentFragment>
 `;

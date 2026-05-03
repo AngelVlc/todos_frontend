@@ -2,114 +2,177 @@
 
 exports[`UsersPage should match the snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="container"
+  <section
+    class="section"
   >
-    <nav
-      aria-label="breadcrumbs"
-      class="breadcrumb"
+    <div
+      class="container"
     >
-      <ul>
-        <li>
-          <a
-            href="/"
+      <nav
+        aria-label="breadcrumbs"
+        class="breadcrumb"
+      >
+        <ul>
+          <li>
+            <a
+              href="/"
+            >
+              Home
+            </a>
+          </li>
+          <li
+            class="is-active"
           >
-            Home
-          </a>
-        </li>
-        <li
-          class="is-active"
+            <a
+              aria-current="page"
+              href="/users"
+            >
+              Users
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="level is-mobile mb-4"
+      >
+        <div
+          class="level-left"
         >
-          <a
-            aria-current="page"
-            href="/users"
+          <h1
+            class="title is-3 mb-0"
           >
             Users
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <h3
-      class="title"
-    >
-      USERS
-    </h3>
-    <table
-      class="table"
-    >
-      <thead>
-        <tr>
-          <td>
-            User
-          </td>
-          <td>
-            Admin?
-          </td>
-          <td>
-            <button
-              class="button is-small"
-              data-testid="addNew"
+          </h1>
+        </div>
+        <div
+          class="level-right"
+        >
+          <button
+            class="button is-primary"
+            data-testid="addNew"
+          >
+            <span
+              class="icon"
             >
-              <span
-                class="icon is-small"
-              >
-                <i
-                  class="fas fa-plus"
-                />
-              </span>
-            </button>
-          </td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          class="is-clickable"
-          data-testid="editUser1"
-        >
-          <td>
-            user1
-          </td>
-          <td>
-            <center>
-              <span
-                class="icon is-small"
-              >
-                <i
-                  class="fas fa-check fa-xs"
-                />
-              </span>
-            </center>
-          </td>
-          <td>
-            <center>
-              <a
-                class="has-text-black delete"
-                data-testid="deleteUser1"
-                href="/users/1/delete"
+              <i
+                class="fas fa-user-plus"
               />
-            </center>
-          </td>
-        </tr>
-        <tr
-          class="is-clickable"
-          data-testid="editUser2"
+            </span>
+            <span>
+              New User
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="table-container"
+      >
+        <table
+          class="table is-fullwidth is-striped is-hoverable"
         >
-          <td>
-            user2
-          </td>
-          <td />
-          <td>
-            <center>
-              <a
-                class="has-text-black delete"
-                data-testid="deleteUser2"
-                href="/users/2/delete"
-              />
-            </center>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+          <thead>
+            <tr>
+              <th>
+                User
+              </th>
+              <th
+                class="has-text-centered"
+              >
+                Role
+              </th>
+              <th
+                class="has-text-right"
+              >
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              class="is-clickable"
+              data-testid="editUser1"
+            >
+              <td
+                class="has-text-weight-semibold"
+              >
+                user1
+              </td>
+              <td
+                class="has-text-centered"
+              >
+                <span
+                  class="tag is-info is-light"
+                >
+                  <span
+                    class="icon is-small"
+                  >
+                    <i
+                      class="fas fa-shield-alt"
+                    />
+                  </span>
+                  <span>
+                    Admin
+                  </span>
+                </span>
+              </td>
+              <td
+                class="has-text-right"
+              >
+                <a
+                  class="button is-small is-danger is-light"
+                  data-testid="deleteUser1"
+                  href="/users/1/delete"
+                >
+                  <span
+                    class="icon is-small"
+                  >
+                    <i
+                      class="fas fa-trash"
+                    />
+                  </span>
+                </a>
+              </td>
+            </tr>
+            <tr
+              class="is-clickable"
+              data-testid="editUser2"
+            >
+              <td
+                class="has-text-weight-semibold"
+              >
+                user2
+              </td>
+              <td
+                class="has-text-centered"
+              >
+                <span
+                  class="tag is-light"
+                >
+                  User
+                </span>
+              </td>
+              <td
+                class="has-text-right"
+              >
+                <a
+                  class="button is-small is-danger is-light"
+                  data-testid="deleteUser2"
+                  href="/users/2/delete"
+                >
+                  <span
+                    class="icon is-small"
+                  >
+                    <i
+                      class="fas fa-trash"
+                    />
+                  </span>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 </DocumentFragment>
 `;

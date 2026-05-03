@@ -2,207 +2,228 @@
 
 exports[`RefreshTokensPage should match the snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="container"
+  <section
+    class="section"
   >
-    <nav
-      aria-label="breadcrumbs"
-      class="breadcrumb"
-    >
-      <ul>
-        <li>
-          <a
-            href="/"
-          >
-            Home
-          </a>
-        </li>
-        <li
-          class="is-active"
-        >
-          <a
-            aria-current="page"
-            href="/refreshtokens"
-          >
-            Refresh Tokens
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <h3
-      class="title"
-    >
-      Refresh Tokens
-    </h3>
     <div
-      class="buttons"
+      class="container"
     >
-      <button
-        class="button is-danger"
-        data-testid="deleteSelected"
+      <nav
+        aria-label="breadcrumbs"
+        class="breadcrumb"
       >
-        Delete Selected
-      </button>
-    </div>
-    <div>
-      <table
-        class="table"
-      >
-        <thead>
-          <tr>
-            <td
-              data-testid="header-id"
+        <ul>
+          <li>
+            <a
+              href="/"
             >
-              <span
-                class="icon is-inline"
-              >
-                ID
-                <i
-                  class="ml-1 fas fa-thin fa-sort-down"
-                />
-              </span>
-            </td>
-            <td
-              data-testid="header-userId"
+              Home
+            </a>
+          </li>
+          <li
+            class="is-active"
+          >
+            <a
+              aria-current="page"
+              href="/refreshtokens"
             >
-              <span
-                class="icon is-inline"
-              >
-                User ID
-              </span>
-            </td>
-            <td
-              data-testid="header-expirationDate"
-            >
-              <span
-                class="icon is-inline"
-              >
-                Expiration Date
-              </span>
-            </td>
-            <td>
-              <center>
-                <input
-                  data-testid="toggleSelectAll"
-                  type="checkbox"
-                />
-              </center>
-            </td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              1
-            </td>
-            <td>
-              1
-            </td>
-            <td>
-              2021-01-29T16:46:58Z
-            </td>
-            <td>
-              <center>
-                <input
-                  data-testid="checkBoxItem1"
-                  type="checkbox"
-                />
-              </center>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              2
-            </td>
-            <td>
-              2
-            </td>
-            <td>
-              2021-03-29T16:46:58Z
-            </td>
-            <td>
-              <center>
-                <input
-                  data-testid="checkBoxItem2"
-                  type="checkbox"
-                />
-              </center>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              3
-            </td>
-            <td>
-              1
-            </td>
-            <td>
-              2021-04-29T16:46:58Z
-            </td>
-            <td>
-              <center>
-                <input
-                  data-testid="checkBoxItem3"
-                  type="checkbox"
-                />
-              </center>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+              Refresh Tokens
+            </a>
+          </li>
+        </ul>
+      </nav>
       <div
-        class="level"
+        class="level is-mobile mb-4"
       >
         <div
           class="level-left"
         >
-          <div
-            class="ml-3 level-item"
+          <h1
+            class="title is-3 mb-0"
           >
-            <input
-              class="pageNumber"
-              data-testid="pagenumber-input"
-              min="1"
-              type="number"
-              value="1"
-            />
+            Refresh Tokens
+          </h1>
+        </div>
+        <div
+          class="level-right"
+        >
+          <button
+            class="button is-danger is-light"
+            data-testid="deleteSelected"
+          >
             <span
               class="icon"
             >
               <i
-                class="fas fa-thin fa-forward"
+                class="fas fa-trash-alt"
               />
             </span>
-          </div>
-          <div
-            class="ml-3 level-item"
-          >
             <span>
-              Per page: 
+              Delete Selected
             </span>
-            <select
-              data-testid="pagesize-select"
+          </button>
+        </div>
+      </div>
+      <div>
+        <table
+          class="table"
+        >
+          <thead>
+            <tr>
+              <td
+                data-testid="header-id"
+              >
+                <span
+                  class="icon is-inline"
+                >
+                  ID
+                  <i
+                    class="ml-1 fas fa-thin fa-sort-down"
+                  />
+                </span>
+              </td>
+              <td
+                data-testid="header-userId"
+              >
+                <span
+                  class="icon is-inline"
+                >
+                  User ID
+                </span>
+              </td>
+              <td
+                data-testid="header-expirationDate"
+              >
+                <span
+                  class="icon is-inline"
+                >
+                  Expiration Date
+                </span>
+              </td>
+              <td>
+                <center>
+                  <input
+                    data-testid="toggleSelectAll"
+                    type="checkbox"
+                  />
+                </center>
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                1
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                2021-01-29T16:46:58Z
+              </td>
+              <td>
+                <center>
+                  <input
+                    data-testid="checkBoxItem1"
+                    type="checkbox"
+                  />
+                </center>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                2
+              </td>
+              <td>
+                2
+              </td>
+              <td>
+                2021-03-29T16:46:58Z
+              </td>
+              <td>
+                <center>
+                  <input
+                    data-testid="checkBoxItem2"
+                    type="checkbox"
+                  />
+                </center>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                3
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                2021-04-29T16:46:58Z
+              </td>
+              <td>
+                <center>
+                  <input
+                    data-testid="checkBoxItem3"
+                    type="checkbox"
+                  />
+                </center>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div
+          class="level"
+        >
+          <div
+            class="level-left"
+          >
+            <div
+              class="ml-3 level-item"
             >
-              <option
-                value="5"
+              <input
+                class="pageNumber"
+                data-testid="pagenumber-input"
+                min="1"
+                type="number"
+                value="1"
+              />
+              <span
+                class="icon"
               >
-                5
-              </option>
-              <option
-                value="10"
+                <i
+                  class="fas fa-thin fa-forward"
+                />
+              </span>
+            </div>
+            <div
+              class="ml-3 level-item"
+            >
+              <span>
+                Per page: 
+              </span>
+              <select
+                data-testid="pagesize-select"
               >
-                10
-              </option>
-              <option
-                value="20"
-              >
-                20
-              </option>
-            </select>
+                <option
+                  value="5"
+                >
+                  5
+                </option>
+                <option
+                  value="10"
+                >
+                  10
+                </option>
+                <option
+                  value="20"
+                >
+                  20
+                </option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </DocumentFragment>
 `;
