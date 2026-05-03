@@ -60,3 +60,46 @@
 .page-size-selector .select:hover select {
   border-color: #bbf7d0;
 }
+
+/* Responsive pagination */
+@media screen and (max-width: 768px) {
+  .pagination-container {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem;
+  }
+
+  .pagination-previous,
+  .pagination-next {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .pagination .input {
+    width: 50px !important;
+    font-size: 0.75rem;
+  }
+
+  .page-size-selector {
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .pagination-previous,
+  .pagination-next {
+    font-size: 0.625rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  .pagination .input {
+    width: 45px !important;
+  }
+}

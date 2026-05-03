@@ -25,7 +25,7 @@ exports[`HomePage when the user is an admin should match the snapshot 1`] = `
           class="columns is-multiline"
         >
           <div
-            class="column is-4"
+            class="column is-4 is-6-tablet is-12-mobile"
           >
             <div
               class="card is-hoverable"
@@ -56,7 +56,7 @@ exports[`HomePage when the user is an admin should match the snapshot 1`] = `
             </div>
           </div>
           <div
-            class="column is-4"
+            class="column is-4 is-6-tablet is-12-mobile"
           >
             <div
               class="card is-hoverable"
@@ -87,7 +87,7 @@ exports[`HomePage when the user is an admin should match the snapshot 1`] = `
             </div>
           </div>
           <div
-            class="column is-4"
+            class="column is-4 is-12-tablet is-12-mobile"
           >
             <div
               class="card is-hoverable"
@@ -129,7 +129,7 @@ exports[`HomePage when the user is an admin should match the snapshot 1`] = `
           class="columns is-multiline"
         >
           <div
-            class="column is-4"
+            class="column is-4 is-6-tablet is-12-mobile"
           >
             <div
               class="card is-hoverable"
@@ -160,7 +160,7 @@ exports[`HomePage when the user is an admin should match the snapshot 1`] = `
             </div>
           </div>
           <div
-            class="column is-4"
+            class="column is-4 is-6-tablet is-12-mobile"
           >
             <div
               class="card is-hoverable"
