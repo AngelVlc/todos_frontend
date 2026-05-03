@@ -137,6 +137,16 @@ code {
     font-size: 1rem;
   }
 
+  /* More spacing for level with titles and buttons */
+  .level.is-mobile {
+    margin-bottom: 1rem;
+  }
+
+  .level.is-mobile .level-left,
+  .level.is-mobile .level-right {
+    margin-bottom: 0.5rem;
+  }
+
   /* Stack buttons vertically on mobile with full width */
   .field.is-grouped {
     flex-direction: column-reverse;
