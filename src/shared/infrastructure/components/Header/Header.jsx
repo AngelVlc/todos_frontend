@@ -10,7 +10,6 @@ export const Header = () => {
     const navBarBurguerRef = useRef();
     let history = useHistory();
 
-<<<<<<< HEAD
     const onLogoutClick = async () => {
         onToggleNavBar();
         try {
@@ -21,8 +20,6 @@ export const Header = () => {
             authDispatch(userLoggedOut());
             history.push('/login');
         }
-    }
->>>>>>> 4f8f179 (fix(auth): improve authentication security and error handling)
     }
 
     const onToggleNavBar = () => {
