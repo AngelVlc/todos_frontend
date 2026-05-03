@@ -39,7 +39,7 @@ export const configure = (requestsDispatch, history) => {
             return axios(originalRequest);
           }
         } catch (refreshError) {
-          localStorage.removeItem('userInfo');
+          localStorage.removeItem('authToken');
           history.push('/login');
           return Promise.reject(refreshError);
         }
@@ -47,7 +47,7 @@ export const configure = (requestsDispatch, history) => {
 
       if (error.response.status === 401
         && (error.response.data === 'Invalid refresh token\n' || error.response.data === 'No authorization cookie\n')) {
-        localStorage.removeItem('userInfo');
+        localStorage.removeItem('authToken');
         history.push('/login');
       }
 

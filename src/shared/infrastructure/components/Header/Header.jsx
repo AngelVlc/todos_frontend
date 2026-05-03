@@ -16,7 +16,7 @@ export const Header = () => {
             await axios.post('/auth/logout');
         } catch (error) {
         } finally {
-            localStorage.removeItem('userInfo');
+            localStorage.removeItem('authToken');
             authDispatch(userLoggedOut());
             history.push('/login');
         }

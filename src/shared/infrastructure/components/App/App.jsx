@@ -21,6 +21,7 @@ import { useAlert } from 'react-alert';
 import { UseCaseFactory } from '../../UseCaseFactory';
 import Loader from 'react-loader-spinner';
 import * as axiosConfigure from '../../axiosConfigure';
+import jwtDecode from 'jwt-decode';
 import './App.css';
 
 const browserHistory = createBrowserHistory();
@@ -39,9 +40,14 @@ const App = () => {
   }, [request.error, alert, requestsDispatch]);
 
   useEffect(() => {
-    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-    if (userInfo) {
-      authDispatch(userLoggedIn(userInfo));
+    const token = localStorage.getItem('authToken');
+    if (token) {
+      const decoded = jwtDecode(token);
+      authDispatch(userLoggedIn({
+        id: decoded.userId,
+        name: decoded.userName,
+        isAdmin: decoded.isAdmin
+      }));
     }
     axiosConfigure.configure(requestsDispatch, browserHistory);
   }, [authDispatch]);
