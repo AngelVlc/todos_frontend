@@ -3,18 +3,31 @@
 exports[`Header should match the snapshot when an admin user is logged in 1`] = `
 <DocumentFragment>
   <nav
-    class="navbar is-dark"
+    aria-label="main navigation"
+    class="navbar"
+    role="navigation"
   >
     <div
       class="navbar-brand"
     >
       <span
-        class="navbar-item is-size-3"
+        class="navbar-item is-size-4 has-text-weight-bold"
+        style="cursor: pointer;"
       >
+        <span
+          class="icon mr-2"
+        >
+          <i
+            class="fas fa-tasks"
+          />
+        </span>
         To Dos
       </span>
-      <div
+      <button
+        aria-expanded="false"
+        aria-label="menu"
         class="navbar-burger"
+        data-testid="navbarBurger"
       >
         <span
           aria-hidden="true"
@@ -25,7 +38,7 @@ exports[`Header should match the snapshot when an admin user is logged in 1`] = 
         <span
           aria-hidden="true"
         />
-      </div>
+      </button>
     </div>
     <div
       class="navbar-menu"
@@ -37,33 +50,138 @@ exports[`Header should match the snapshot when an admin user is logged in 1`] = 
           class="navbar-item is-clickable"
           data-testid="goToRoot"
         >
+          <span
+            class="icon mr-1"
+          >
+            <i
+              class="fas fa-home"
+            />
+          </span>
           Home
         </span>
         <span
           class="navbar-item is-clickable"
           data-testid="goToLists"
         >
+          <span
+            class="icon mr-1"
+          >
+            <i
+              class="fas fa-list"
+            />
+          </span>
           Lists
+        </span>
+        <span
+          class="navbar-item is-clickable"
+          data-testid="goToCategories"
+        >
+          <span
+            class="icon mr-1"
+          >
+            <i
+              class="fas fa-tags"
+            />
+          </span>
+          Categories
         </span>
         <span
           class="navbar-item is-clickable"
           data-testid="goToUsers"
         >
+          <span
+            class="icon mr-1"
+          >
+            <i
+              class="fas fa-users"
+            />
+          </span>
           Users
         </span>
       </div>
       <div
         class="navbar-end"
       >
-        <hr
-          class="my-0"
-        />
-        <span
-          class="navbar-item is-clickable"
-          data-testid="logOut"
+        <div
+          class="navbar-item"
         >
-          Log Out admin
-        </span>
+          <div
+            class="dropdown is-right "
+          >
+            <div
+              class="dropdown-trigger"
+            >
+              <button
+                aria-controls="dropdown-menu"
+                aria-haspopup="true"
+                class="button is-small is-white"
+                data-testid="userDropdown"
+              >
+                <span
+                  class="icon is-small"
+                >
+                  <i
+                    class="fas fa-user-circle"
+                  />
+                </span>
+                <span
+                  class="has-text-dark has-text-weight-semibold"
+                >
+                  admin
+                </span>
+                <span
+                  class="icon is-small"
+                >
+                  <i
+                    class="fas fa-chevron-down "
+                  />
+                </span>
+              </button>
+            </div>
+            <div
+              class="dropdown-menu"
+              id="dropdown-menu"
+              role="menu"
+            >
+              <div
+                class="dropdown-content"
+              >
+                <div
+                  class="dropdown-item"
+                >
+                  <p
+                    class="has-text-weight-semibold"
+                  >
+                    admin
+                  </p>
+                  <p
+                    class="is-size-7 has-text-grey"
+                  >
+                    Administrator
+                  </p>
+                </div>
+                <hr
+                  class="dropdown-divider"
+                />
+                <button
+                  class="button is-white is-fullwidth has-text-danger"
+                  data-testid="logOut"
+                >
+                  <span
+                    class="icon"
+                  >
+                    <i
+                      class="fas fa-sign-out-alt"
+                    />
+                  </span>
+                  <span>
+                    Log Out
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
@@ -73,18 +191,31 @@ exports[`Header should match the snapshot when an admin user is logged in 1`] = 
 exports[`Header should match the snapshot when the user is logged in 1`] = `
 <DocumentFragment>
   <nav
-    class="navbar is-dark"
+    aria-label="main navigation"
+    class="navbar"
+    role="navigation"
   >
     <div
       class="navbar-brand"
     >
       <span
-        class="navbar-item is-size-3"
+        class="navbar-item is-size-4 has-text-weight-bold"
+        style="cursor: pointer;"
       >
+        <span
+          class="icon mr-2"
+        >
+          <i
+            class="fas fa-tasks"
+          />
+        </span>
         To Dos
       </span>
-      <div
+      <button
+        aria-expanded="false"
+        aria-label="menu"
         class="navbar-burger"
+        data-testid="navbarBurger"
       >
         <span
           aria-hidden="true"
@@ -95,7 +226,7 @@ exports[`Header should match the snapshot when the user is logged in 1`] = `
         <span
           aria-hidden="true"
         />
-      </div>
+      </button>
     </div>
     <div
       class="navbar-menu"
@@ -107,27 +238,125 @@ exports[`Header should match the snapshot when the user is logged in 1`] = `
           class="navbar-item is-clickable"
           data-testid="goToRoot"
         >
+          <span
+            class="icon mr-1"
+          >
+            <i
+              class="fas fa-home"
+            />
+          </span>
           Home
         </span>
         <span
           class="navbar-item is-clickable"
           data-testid="goToLists"
         >
+          <span
+            class="icon mr-1"
+          >
+            <i
+              class="fas fa-list"
+            />
+          </span>
           Lists
+        </span>
+        <span
+          class="navbar-item is-clickable"
+          data-testid="goToCategories"
+        >
+          <span
+            class="icon mr-1"
+          >
+            <i
+              class="fas fa-tags"
+            />
+          </span>
+          Categories
         </span>
       </div>
       <div
         class="navbar-end"
       >
-        <hr
-          class="my-0"
-        />
-        <span
-          class="navbar-item is-clickable"
-          data-testid="logOut"
+        <div
+          class="navbar-item"
         >
-          Log Out user
-        </span>
+          <div
+            class="dropdown is-right "
+          >
+            <div
+              class="dropdown-trigger"
+            >
+              <button
+                aria-controls="dropdown-menu"
+                aria-haspopup="true"
+                class="button is-small is-white"
+                data-testid="userDropdown"
+              >
+                <span
+                  class="icon is-small"
+                >
+                  <i
+                    class="fas fa-user-circle"
+                  />
+                </span>
+                <span
+                  class="has-text-dark has-text-weight-semibold"
+                >
+                  user
+                </span>
+                <span
+                  class="icon is-small"
+                >
+                  <i
+                    class="fas fa-chevron-down "
+                  />
+                </span>
+              </button>
+            </div>
+            <div
+              class="dropdown-menu"
+              id="dropdown-menu"
+              role="menu"
+            >
+              <div
+                class="dropdown-content"
+              >
+                <div
+                  class="dropdown-item"
+                >
+                  <p
+                    class="has-text-weight-semibold"
+                  >
+                    user
+                  </p>
+                  <p
+                    class="is-size-7 has-text-grey"
+                  >
+                    User
+                  </p>
+                </div>
+                <hr
+                  class="dropdown-divider"
+                />
+                <button
+                  class="button is-white is-fullwidth has-text-danger"
+                  data-testid="logOut"
+                >
+                  <span
+                    class="icon"
+                  >
+                    <i
+                      class="fas fa-sign-out-alt"
+                    />
+                  </span>
+                  <span>
+                    Log Out
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </nav>

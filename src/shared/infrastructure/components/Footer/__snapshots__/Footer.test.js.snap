@@ -3,16 +3,54 @@
 exports[`Footer Should match the snapshot 1`] = `
 <DocumentFragment>
   <footer
-    class="footer py-1"
+    class="footer has-background-white py-3"
   >
     <div
-      class="content has-text-right"
+      class="content has-text-centered"
     >
-      <span
-        class="is-size-7"
+      <div
+        class="columns is-vcentered"
       >
-        sha: 1234567, build: date
-      </span>
+        <div
+          class="column"
+        >
+          <p
+            class="is-size-7 has-text-grey"
+          >
+            <span
+              class="icon mr-1"
+            >
+              <i
+                class="fas fa-code-branch"
+              />
+            </span>
+            <span
+              class="has-text-weight-semibold"
+            >
+              Commit:
+            </span>
+             1234567
+            <span
+              class="mx-2"
+            >
+              |
+            </span>
+            <span
+              class="icon mr-1"
+            >
+              <i
+                class="fas fa-calendar"
+              />
+            </span>
+            <span
+              class="has-text-weight-semibold"
+            >
+              Build:
+            </span>
+             date
+          </p>
+        </div>
+      </div>
     </div>
   </footer>
 </DocumentFragment>

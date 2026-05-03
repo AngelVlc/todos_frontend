@@ -35,5 +35,47 @@ code {
 
 /* Better spacing for forms */
 .field {
+  margin-bottom: 1rem;
+}
+
+/* Dropdown icon rotation */
+.fa-chevron-down.is-rotated {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+/* Navbar improvements */
+.navbar-item.is-clickable:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Card hover effects */
+.card.is-hoverable {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card.is-hoverable:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+/* Hero gradient for login */
+.hero.is-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Smooth transitions for buttons */
+.button {
+  transition: all 0.2s ease;
+}
+
+/* Better spacing for forms */
+.field {
   margin-bottom: 1.5rem;
 }
