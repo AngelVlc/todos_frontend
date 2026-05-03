@@ -1,11 +1,18 @@
 import { render, cleanup, fireEvent, waitFor } from "@testing-library/react";
 import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
-import { LoginPage } from "./LoginPage";
-import { AppContext } from "../../contexts";
 import axios from "axios";
 
 jest.mock("axios");
+jest.mock("jwt-decode", () => {
+  return function() {
+    return {
+      userId: 1,
+      userName: "name",
+      isAdmin: true,
+    };
+  };
+});
 
 const mockAuthDispatch = jest.fn();
 const mockHistoryPush = jest.fn();
@@ -15,6 +22,9 @@ jest.mock("react-router-dom", () => ({
     push: mockHistoryPush,
   }),
 }));
+
+const { LoginPage } = require("./LoginPage");
+const { AppContext } = require("../../contexts");
 
 const renderWithContextAndRouter = () => {
   const history = createMemoryHistory();
@@ -90,9 +100,7 @@ describe("LoginPage", () => {
 
     axios.post.mockResolvedValue({
       data: {
-        id: 1,
-        name: "name",
-        isAdmin: true,
+        token: "fake.jwt.token",
       },
     });
 
@@ -106,8 +114,8 @@ describe("LoginPage", () => {
       password: "pass",
       username: "user",
     });
-    expect(window.localStorage.removeItem.mock.calls.length).toBe(1);
-    expect(window.localStorage.removeItem.mock.calls[0][0]).toBe("userInfo");
+    expect(window.localStorage.setItem.mock.calls.length).toBe(1);
+    expect(window.localStorage.setItem.mock.calls[0][0]).toBe("authToken");
     expect(mockHistoryPush).toHaveBeenCalled();
     expect(mockHistoryPush.mock.calls[0][0]).toBe("/");
     axios.post.mockClear();

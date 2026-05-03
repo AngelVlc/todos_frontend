@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { AppContext } from '../../contexts';
+import { AppContext } from '../contexts';
 
 export const AdminRoute = ({ component: Component, ...rest }) => {
     const { auth } = useContext(AppContext);

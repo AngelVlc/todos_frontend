@@ -5,6 +5,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { userLoggedIn, userLoggedOut } from '../../actions';
 import * as Yup from 'yup';
 import axios from 'axios';
+import jwtDecode from 'jwt-decode';
 
 export const LoginPage = () => {
     const { authDispatch } = useContext(AppContext);
@@ -13,14 +14,20 @@ export const LoginPage = () => {
 
     useEffect(() => {
         authDispatch(userLoggedOut());
-        localStorage.removeItem('userInfo');
+        localStorage.removeItem('authToken');
     }, [authDispatch]);
 
     const onSubmit = async(values) => {
         try {
             const res = await axios.post('/auth/login', values);
-            localStorage.setItem('userInfo', JSON.stringify(res.data));
-            authDispatch(userLoggedIn(res.data));
+            const token = res.data.token;
+            localStorage.setItem('authToken', token);
+            const decoded = jwtDecode(token);
+            authDispatch(userLoggedIn({
+                id: decoded.userId,
+                name: decoded.userName,
+                isAdmin: decoded.isAdmin
+            }));
             history.push('/');
         } catch (error) {
             setAuthError(error);
