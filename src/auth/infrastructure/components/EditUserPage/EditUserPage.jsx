@@ -26,13 +26,13 @@ export const EditUserPage = () => {
     <section className="section">
       {pageState && (
         <div className="container">
+          <Breadcrumb
+            items={[
+              { url: "/users", text: "Users" },
+              { url: `/users/${userId}`, text: pageState.name },
+            ]}
+          />
           <div className="max-w-600 mx-auto">
-            <Breadcrumb
-              items={[
-                { url: "/users", text: "Users" },
-                { url: `/users/${userId}`, text: pageState.name },
-              ]}
-            />
             <h1 className="title is-3 mb-5">{`Edit user '${pageState.name}'`}</h1>
             <UserForm user={pageState} />
           </div>

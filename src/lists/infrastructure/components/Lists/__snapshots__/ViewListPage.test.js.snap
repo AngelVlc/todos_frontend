@@ -13,14 +13,23 @@ exports[`ViewListPage should match the snapshot for an existing list 1`] = `
       >
         <nav
           aria-label="breadcrumbs"
-          class="breadcrumb"
+          class="breadcrumb has-arrow-separator mb-4"
         >
           <ul>
             <li>
               <a
                 href="/"
               >
-                Home
+                <span
+                  class="icon is-small"
+                >
+                  <i
+                    class="fas fa-home"
+                  />
+                </span>
+                <span>
+                  Home
+                </span>
               </a>
             </li>
             <li>

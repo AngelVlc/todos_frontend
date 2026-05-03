@@ -7,13 +7,13 @@ export const NewListPage = () => {
   return (
     <section className="section">
       <div className="container">
+        <Breadcrumb
+          items={[
+            { url: "/lists", text: "Lists" },
+            { url: "/lists/new", text: "New" },
+          ]}
+        />
         <div className="max-w-800 mx-auto">
-          <Breadcrumb
-            items={[
-              { url: "/lists", text: "Lists" },
-              { url: "/lists/new", text: "New" },
-            ]}
-          />
           <h1 className="title is-3 mb-5">New List</h1>
           <ListForm list={List.createEmpty()} />
         </div>

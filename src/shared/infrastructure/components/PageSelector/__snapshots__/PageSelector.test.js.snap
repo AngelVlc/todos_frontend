@@ -3,29 +3,39 @@
 exports[`PageSelector should match the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="ml-3 level-item"
+    class="pagination-container"
   >
-    <span
-      class="icon"
+    <nav
+      aria-label="pagination"
+      class="pagination"
+      role="navigation"
     >
-      <i
-        class="fas fa-thin fa-backward"
-      />
-    </span>
-    <input
-      class="pageNumber"
-      data-testid="pagenumber-input"
-      min="1"
-      type="number"
-      value="5"
-    />
-    <span
-      class="icon"
-    >
-      <i
-        class="fas fa-thin fa-forward"
-      />
-    </span>
+      <button
+        class="pagination-previous"
+      >
+        Previous
+      </button>
+      <button
+        class="pagination-next"
+      >
+        Next
+      </button>
+      <ul
+        class="pagination-list"
+      >
+        <li>
+          <input
+            class="input"
+            data-testid="pagenumber-input"
+            max="999"
+            min="1"
+            style="width: 60px; text-align: center;"
+            type="number"
+            value="5"
+          />
+        </li>
+      </ul>
+    </nav>
   </div>
 </DocumentFragment>
 `;

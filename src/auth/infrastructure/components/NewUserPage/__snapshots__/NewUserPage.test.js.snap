@@ -8,40 +8,49 @@ exports[`NewUserPage should match the snapshot for a new user 1`] = `
     <div
       class="container"
     >
+      <nav
+        aria-label="breadcrumbs"
+        class="breadcrumb has-arrow-separator mb-4"
+      >
+        <ul>
+          <li>
+            <a
+              href="/"
+            >
+              <span
+                class="icon is-small"
+              >
+                <i
+                  class="fas fa-home"
+                />
+              </span>
+              <span>
+                Home
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/users"
+            >
+              Users
+            </a>
+          </li>
+          <li
+            class="is-active"
+          >
+            <a
+              aria-current="page"
+              href="/users/new"
+            >
+              New
+            </a>
+          </li>
+        </ul>
+      </nav>
       <div
         class="max-w-600 mx-auto"
       >
-        <nav
-          aria-label="breadcrumbs"
-          class="breadcrumb"
-        >
-          <ul>
-            <li>
-              <a
-                href="/"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="/users"
-              >
-                Users
-              </a>
-            </li>
-            <li
-              class="is-active"
-            >
-              <a
-                aria-current="page"
-                href="/users/new"
-              >
-                New
-              </a>
-            </li>
-          </ul>
-        </nav>
         <h1
           class="title is-3 mb-5"
         >

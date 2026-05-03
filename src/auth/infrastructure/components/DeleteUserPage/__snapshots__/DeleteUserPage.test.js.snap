@@ -7,14 +7,23 @@ exports[`DeleteUserPage when the user is an admin should match the snapshot when
   >
     <nav
       aria-label="breadcrumbs"
-      class="breadcrumb"
+      class="breadcrumb has-arrow-separator mb-4"
     >
       <ul>
         <li>
           <a
             href="/"
           >
-            Home
+            <span
+              class="icon is-small"
+            >
+              <i
+                class="fas fa-home"
+              />
+            </span>
+            <span>
+              Home
+            </span>
           </a>
         </li>
         <li>
@@ -68,14 +77,23 @@ exports[`DeleteUserPage when the user is not an admin should match the snapshot 
   >
     <nav
       aria-label="breadcrumbs"
-      class="breadcrumb"
+      class="breadcrumb has-arrow-separator mb-4"
     >
       <ul>
         <li>
           <a
             href="/"
           >
-            Home
+            <span
+              class="icon is-small"
+            >
+              <i
+                class="fas fa-home"
+              />
+            </span>
+            <span>
+              Home
+            </span>
           </a>
         </li>
         <li>

@@ -10,14 +10,23 @@ exports[`RefreshTokensPage should match the snapshot 1`] = `
     >
       <nav
         aria-label="breadcrumbs"
-        class="breadcrumb"
+        class="breadcrumb has-arrow-separator mb-4"
       >
         <ul>
           <li>
             <a
               href="/"
             >
-              Home
+              <span
+                class="icon is-small"
+              >
+                <i
+                  class="fas fa-home"
+                />
+              </span>
+              <span>
+                Home
+              </span>
             </a>
           </li>
           <li
@@ -65,160 +74,198 @@ exports[`RefreshTokensPage should match the snapshot 1`] = `
         </div>
       </div>
       <div>
-        <table
-          class="table"
+        <div
+          class="table-container"
         >
-          <thead>
-            <tr>
-              <td
-                data-testid="header-id"
-              >
-                <span
-                  class="icon is-inline"
+          <table
+            class="table is-fullwidth is-striped is-hoverable"
+          >
+            <thead>
+              <tr>
+                <td
+                  data-testid="header-id"
                 >
-                  ID
-                  <i
-                    class="ml-1 fas fa-thin fa-sort-down"
-                  />
-                </span>
-              </td>
-              <td
-                data-testid="header-userId"
-              >
-                <span
-                  class="icon is-inline"
+                  <span
+                    class="icon is-inline"
+                  >
+                    ID
+                    <i
+                      class="ml-1 fas fa-thin fa-sort-down"
+                    />
+                  </span>
+                </td>
+                <td
+                  data-testid="header-userId"
                 >
-                  User ID
-                </span>
-              </td>
-              <td
-                data-testid="header-expirationDate"
-              >
-                <span
-                  class="icon is-inline"
+                  <span
+                    class="icon is-inline"
+                  >
+                    User ID
+                  </span>
+                </td>
+                <td
+                  data-testid="header-expirationDate"
                 >
-                  Expiration Date
-                </span>
-              </td>
-              <td>
-                <center>
+                  <span
+                    class="icon is-inline"
+                  >
+                    Expiration Date
+                  </span>
+                </td>
+                <th
+                  class="has-text-centered"
+                  style="width: 50px;"
+                >
                   <input
                     data-testid="toggleSelectAll"
                     type="checkbox"
                   />
-                </center>
-              </td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                1
-              </td>
-              <td>
-                1
-              </td>
-              <td>
-                2021-01-29T16:46:58Z
-              </td>
-              <td>
-                <center>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  1
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  2021-01-29T16:46:58Z
+                </td>
+                <td
+                  class="has-text-centered"
+                >
                   <input
                     data-testid="checkBoxItem1"
                     type="checkbox"
                   />
-                </center>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                2
-              </td>
-              <td>
-                2
-              </td>
-              <td>
-                2021-03-29T16:46:58Z
-              </td>
-              <td>
-                <center>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  2
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  2021-03-29T16:46:58Z
+                </td>
+                <td
+                  class="has-text-centered"
+                >
                   <input
                     data-testid="checkBoxItem2"
                     type="checkbox"
                   />
-                </center>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                3
-              </td>
-              <td>
-                1
-              </td>
-              <td>
-                2021-04-29T16:46:58Z
-              </td>
-              <td>
-                <center>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  3
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  2021-04-29T16:46:58Z
+                </td>
+                <td
+                  class="has-text-centered"
+                >
                   <input
                     data-testid="checkBoxItem3"
                     type="checkbox"
                   />
-                </center>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <div
-          class="level"
+          class="level is-mobile mt-4"
         >
           <div
             class="level-left"
           >
             <div
-              class="ml-3 level-item"
+              class="pagination-container"
             >
-              <input
-                class="pageNumber"
-                data-testid="pagenumber-input"
-                min="1"
-                type="number"
-                value="1"
-              />
-              <span
-                class="icon"
+              <nav
+                aria-label="pagination"
+                class="pagination"
+                role="navigation"
               >
-                <i
-                  class="fas fa-thin fa-forward"
-                />
-              </span>
+                <button
+                  class="pagination-previous"
+                  disabled=""
+                >
+                  Previous
+                </button>
+                <button
+                  class="pagination-next"
+                >
+                  Next
+                </button>
+                <ul
+                  class="pagination-list"
+                >
+                  <li>
+                    <input
+                      class="input"
+                      data-testid="pagenumber-input"
+                      max="999"
+                      min="1"
+                      style="width: 60px; text-align: center;"
+                      type="number"
+                      value="1"
+                    />
+                  </li>
+                </ul>
+              </nav>
             </div>
+          </div>
+          <div
+            class="level-right"
+          >
             <div
-              class="ml-3 level-item"
+              class="page-size-selector"
             >
-              <span>
-                Per page: 
-              </span>
-              <select
-                data-testid="pagesize-select"
+              <span
+                class="mr-2"
               >
-                <option
-                  value="5"
+                Items per page:
+              </span>
+              <div
+                class="select is-small"
+              >
+                <select
+                  data-testid="pagesize-select"
                 >
-                  5
-                </option>
-                <option
-                  value="10"
-                >
-                  10
-                </option>
-                <option
-                  value="20"
-                >
-                  20
-                </option>
-              </select>
+                  <option
+                    value="5"
+                  >
+                    5
+                  </option>
+                  <option
+                    value="10"
+                  >
+                    10
+                  </option>
+                  <option
+                    value="20"
+                  >
+                    20
+                  </option>
+                  <option
+                    value="50"
+                  >
+                    50
+                  </option>
+                </select>
+              </div>
             </div>
           </div>
         </div>
