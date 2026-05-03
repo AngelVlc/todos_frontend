@@ -3,6 +3,9 @@ import { Router } from "react-router-dom";
 import { Header } from "./Header";
 import { AppContext } from "../../contexts";
 import { createMemoryHistory } from "history";
+import axios from "axios";
+
+jest.mock("axios");
 
 const mockAuthDispatch = jest.fn();
 const mockHistoryPush = jest.fn();
@@ -25,13 +28,27 @@ const renderWithRouterAndContext = (auth) => {
   };
 };
 
-afterEach(cleanup);
+afterEach(() => {
+  cleanup();
+  axios.post.mockClear();
+});
 
 describe("Header", () => {
-  it("should match the snapshot when the user is not logged in", () => {
-    const { asFragment } = renderWithRouterAndContext({ info: null });
+  it("should do logout", async () => {
+    axios.post.mockResolvedValue({ status: 200 });
 
-    expect(asFragment()).toMatchSnapshot();
+    const { getByTestId } = renderWithRouterAndContext({
+      info: { name: "user" },
+    });
+
+    await waitFor(() => {
+      fireEvent.click(getByTestId("logOut"));
+    });
+
+    expect(axios.post).toHaveBeenCalledWith('/auth/logout');
+    expect(mockAuthDispatch).toHaveBeenCalled();
+    expect(mockHistoryPush).toHaveBeenCalled();
+    expect(mockHistoryPush.mock.calls[0][0]).toBe("/login");
   });
 
   it("should match the snapshot when the user is logged in", () => {

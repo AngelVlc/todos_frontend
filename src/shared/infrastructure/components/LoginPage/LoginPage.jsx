@@ -13,7 +13,7 @@ export const LoginPage = () => {
 
     useEffect(() => {
         authDispatch(userLoggedOut());
-        localStorage.setItem('userInfo', null);
+        localStorage.removeItem('userInfo');
     }, [authDispatch]);
 
     const onSubmit = async(values) => {

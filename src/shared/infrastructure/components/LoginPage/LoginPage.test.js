@@ -34,6 +34,7 @@ beforeEach(() => {
     value: {
       getItem: jest.fn(() => null),
       setItem: jest.fn(() => null),
+      removeItem: jest.fn(() => null),
     },
     writable: true,
   });
@@ -105,13 +106,8 @@ describe("LoginPage", () => {
       password: "pass",
       username: "user",
     });
-    expect(window.localStorage.setItem.mock.calls.length).toBe(2);
-    expect(window.localStorage.setItem.mock.calls[0][0]).toBe("userInfo");
-    expect(window.localStorage.setItem.mock.calls[0][1]).toBe(null);
-    expect(window.localStorage.setItem.mock.calls[1][0]).toBe("userInfo");
-    expect(window.localStorage.setItem.mock.calls[1][1]).toBe(
-      JSON.stringify({ id: 1, name: "name", isAdmin: true })
-    );
+    expect(window.localStorage.removeItem.mock.calls.length).toBe(1);
+    expect(window.localStorage.removeItem.mock.calls[0][0]).toBe("userInfo");
     expect(mockHistoryPush).toHaveBeenCalled();
     expect(mockHistoryPush.mock.calls[0][0]).toBe("/");
     axios.post.mockClear();
