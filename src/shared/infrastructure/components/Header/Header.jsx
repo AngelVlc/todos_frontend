@@ -1,15 +1,28 @@
 import React, { useRef, useContext } from 'react';
 import { AppContext } from '../../contexts';
 import { useHistory } from 'react-router-dom';
+import axios from 'axios';
+import { userLoggedOut } from '../../actions';
 
 export const Header = () => {
-    const { auth } = useContext(AppContext)
+    const { auth, authDispatch } = useContext(AppContext)
     const navBarMenuRef = useRef();
     const navBarBurguerRef = useRef();
     let history = useHistory();
 
-    const onLogoutClick = () => {
-        history.push('/login');
+<<<<<<< HEAD
+    const onLogoutClick = async () => {
+        onToggleNavBar();
+        try {
+            await axios.post('/auth/logout');
+        } catch (error) {
+        } finally {
+            localStorage.removeItem('authToken');
+            authDispatch(userLoggedOut());
+            history.push('/login');
+        }
+    }
+>>>>>>> 4f8f179 (fix(auth): improve authentication security and error handling)
     }
 
     const onToggleNavBar = () => {

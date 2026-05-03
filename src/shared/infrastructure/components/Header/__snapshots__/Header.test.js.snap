@@ -133,28 +133,3 @@ exports[`Header should match the snapshot when the user is logged in 1`] = `
   </nav>
 </DocumentFragment>
 `;
-
-exports[`Header should match the snapshot when the user is not logged in 1`] = `
-<DocumentFragment>
-  <nav
-    class="navbar is-dark"
-  >
-    <div
-      class="navbar-brand"
-    >
-      <span
-        class="navbar-item is-size-3"
-      >
-        To Dos
-      </span>
-    </div>
-    <div
-      class="navbar-menu"
-    >
-      <div
-        class="navbar-start"
-      />
-    </div>
-  </nav>
-</DocumentFragment>
-`;

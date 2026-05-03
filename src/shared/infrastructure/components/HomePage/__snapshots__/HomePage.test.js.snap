@@ -58,10 +58,6 @@ exports[`HomePage when the user is an admin should match the snapshot 1`] = `
         >
           Lists
         </button>
-      </div>
-      <div
-        class="buttons"
-      >
         <button
           class="button is-small"
           data-testid="categories"
@@ -69,6 +65,9 @@ exports[`HomePage when the user is an admin should match the snapshot 1`] = `
           Categories
         </button>
       </div>
+      <div
+        class="buttons"
+      />
     </div>
   </div>
 </DocumentFragment>
