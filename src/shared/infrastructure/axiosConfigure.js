@@ -33,14 +33,21 @@ export const configure = (requestsDispatch, history) => {
         && error.response.data === 'Invalid authorization token\n'
         && !originalRequest._retry) {
         originalRequest._retry = true;
-        const res = await axios.post('/auth/refreshtoken');
-        if (res.status === 200) {
-          return axios(originalRequest);
+        try {
+          const res = await axios.post('/auth/refreshtoken');
+          if (res.status === 200) {
+            return axios(originalRequest);
+          }
+        } catch (refreshError) {
+          localStorage.removeItem('authToken');
+          history.push('/login');
+          return Promise.reject(refreshError);
         }
       }
 
       if (error.response.status === 401
         && (error.response.data === 'Invalid refresh token\n' || error.response.data === 'No authorization cookie\n')) {
+        localStorage.removeItem('authToken');
         history.push('/login');
       }
 

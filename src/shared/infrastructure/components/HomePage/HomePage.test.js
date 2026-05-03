@@ -5,6 +5,8 @@ import { AppContext } from "../../contexts";
 import { createMemoryHistory } from "history";
 
 const mockHistoryPush = jest.fn();
+let mockUseCaseFactory;
+
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
   useHistory: () => ({
@@ -12,9 +14,18 @@ jest.mock("react-router-dom", () => ({
   }),
 }));
 
+beforeEach(() => {
+  const mockUseCase = {
+    execute: jest.fn(() => Promise.resolve([])),
+  };
+  mockUseCaseFactory = {
+    get: jest.fn(() => mockUseCase),
+  };
+});
+
 const renderWithRouterAndContext = (auth) => {
   const history = createMemoryHistory();
-  const context = { auth };
+  const context = { auth, useCaseFactory: mockUseCaseFactory };
   return {
     ...render(
       <AppContext.Provider value={context}>
