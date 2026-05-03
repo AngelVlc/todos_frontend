@@ -21,6 +21,7 @@ jest.mock("react-router-dom", () => ({
   useHistory: () => ({
     push: mockHistoryPush,
   }),
+  Redirect: jest.fn(() => null),
 }));
 
 const { LoginPage } = require("./LoginPage");
@@ -28,7 +29,7 @@ const { AppContext } = require("../../contexts");
 
 const renderWithContextAndRouter = () => {
   const history = createMemoryHistory();
-  const context = { authDispatch: mockAuthDispatch };
+  const context = { auth: { info: null }, authDispatch: mockAuthDispatch };
 
   return {
     ...render(
@@ -76,7 +77,7 @@ describe("LoginPage", () => {
     await changeInput(getByTestId, "name", "user");
     await changeInput(getByTestId, "password", "pass");
 
-    axios.post.mockRejectedValue("some error");
+    axios.post.mockRejectedValue({ response: { data: "some error" } });
 
     await waitFor(() => {
       fireEvent.click(getByTestId("submit"));
@@ -116,8 +117,7 @@ describe("LoginPage", () => {
     });
     expect(window.localStorage.setItem.mock.calls.length).toBe(1);
     expect(window.localStorage.setItem.mock.calls[0][0]).toBe("authToken");
-    expect(mockHistoryPush).toHaveBeenCalled();
-    expect(mockHistoryPush.mock.calls[0][0]).toBe("/");
+    expect(mockAuthDispatch).toHaveBeenCalled();
     axios.post.mockClear();
   });
 

@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useReducer, useEffect, useState } from 'react';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { AdminRoute, PrivateRoute } from '../../routers';
 import { LoginPage } from '../LoginPage';
@@ -30,6 +30,7 @@ const useCaseFactory = new UseCaseFactory()
 const App = () => {
   const [auth, authDispatch] = useReducer(loginReducer, []);
   const [request, requestsDispatch] = useReducer(requestsReducer, []);
+  const [isLoading, setIsLoading] = useState(true);
   const alert = useAlert();
 
   useEffect(() => {
@@ -42,21 +43,38 @@ const App = () => {
   useEffect(() => {
     const token = localStorage.getItem('authToken');
     if (token) {
-      const decoded = jwtDecode(token);
-      authDispatch(userLoggedIn({
-        id: decoded.userId,
-        name: decoded.userName,
-        isAdmin: decoded.isAdmin
-      }));
+      try {
+        const decoded = jwtDecode(token);
+        authDispatch(userLoggedIn({
+          id: decoded.userId,
+          name: decoded.userName,
+          isAdmin: decoded.isAdmin
+        }));
+      } catch (error) {
+        localStorage.removeItem('authToken');
+      }
     }
+    setIsLoading(false);
     axiosConfigure.configure(requestsDispatch, browserHistory);
   }, [authDispatch]);
+
+  if (isLoading) {
+    return (
+      <div className="hero is-fullheight">
+        <div className="hero-body">
+          <div className="container has-text-centered">
+            <Loader type="Circles" color="#667eea" height="100" width="100" />
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="is-flex is-flex-direction-column">
       <AppContext.Provider value={{ auth, authDispatch, useCaseFactory }}>
         <Router history={browserHistory}>
-          <Header />
+          {auth.info && <Header />}
           {request.pending &&
             <div className="loader-container">
               <div className="loader-item">
@@ -66,7 +84,7 @@ const App = () => {
               </div>
             </div>
           }
-          <section className="section is-flex-grow-2">
+          <section className={auth.info ? "section is-flex-grow-2" : ""}>
             <Switch>
               <PrivateRoute exact path="/" component={HomePage} />
               <PrivateRoute exact path="/lists" component={ListsPage} />
@@ -91,7 +109,7 @@ const App = () => {
               <Redirect from="*" to="/" />
             </Switch>
           </section>
-          <Footer />
+          {auth.info && <Footer />}
         </Router>
       </AppContext.Provider>
     </div>

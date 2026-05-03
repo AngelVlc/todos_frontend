@@ -2,77 +2,124 @@
 
 exports[`LoginPage should match the snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="container"
+  <section
+    class="hero is-fullheight"
+    style="min-height: 100vh; height: 100vh; overflow: hidden;"
   >
-    <h3
-      class="title"
-    >
-      LOG IN
-    </h3>
-    <form
-      action="#"
+    <div
+      class="hero-body"
+      style="display: flex; align-items: center;"
     >
       <div
-        class="field"
+        class="container"
       >
-        <label
-          class="label"
-          for="username"
-        >
-          Name
-        </label>
         <div
-          class="control"
+          class="columns is-centered"
         >
-          <input
-            data-testid="name"
-            name="username"
-            type="text"
-            value=""
-          />
+          <div
+            class="column is-4"
+          >
+            <div
+              class="box has-text-centered"
+              style="padding: 2rem; max-width: 400px; margin: 0px auto;"
+            >
+              <form
+                action="#"
+              >
+                <div
+                  class="field"
+                  style="margin-bottom: 1rem;"
+                >
+                  <label
+                    class="label"
+                    for="username"
+                  >
+                    Username
+                  </label>
+                  <div
+                    class="control has-icons-left"
+                  >
+                    <input
+                      class="input"
+                      data-testid="name"
+                      name="username"
+                      placeholder="Enter your username"
+                      type="text"
+                      value=""
+                    />
+                    <span
+                      class="icon is-small is-left"
+                    >
+                      <i
+                        class="fas fa-user"
+                      />
+                    </span>
+                  </div>
+                  <p
+                    class="help is-danger"
+                    data-testid="nameErrors"
+                  />
+                </div>
+                <div
+                  class="field"
+                  style="margin-bottom: 1rem;"
+                >
+                  <label
+                    class="label"
+                    for="password"
+                  >
+                    Password
+                  </label>
+                  <div
+                    class="control has-icons-left"
+                  >
+                    <input
+                      class="input"
+                      data-testid="password"
+                      name="password"
+                      placeholder="Enter your password"
+                      type="password"
+                      value=""
+                    />
+                    <span
+                      class="icon is-small is-left"
+                    >
+                      <i
+                        class="fas fa-lock"
+                      />
+                    </span>
+                  </div>
+                  <p
+                    class="help is-danger"
+                    data-testid="passwordErrors"
+                  />
+                </div>
+                <div
+                  class="field mt-5"
+                >
+                  <button
+                    class="button is-primary is-fullwidth is-medium"
+                    data-testid="submit"
+                    type="submit"
+                  >
+                    <span
+                      class="icon"
+                    >
+                      <i
+                        class="fas fa-sign-in-alt"
+                      />
+                    </span>
+                    <span>
+                      Log In
+                    </span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-        <p
-          class="help is-danger"
-          data-testid="nameErrors"
-        />
       </div>
-      <div
-        class="field"
-      >
-        <label
-          class="label"
-          for="password"
-        >
-          Password
-        </label>
-        <div
-          class="control"
-        >
-          <input
-            data-testid="password"
-            name="password"
-            type="password"
-            value=""
-          />
-        </div>
-        <p
-          class="help is-danger"
-          data-testid="passwordErrors"
-        />
-      </div>
-      <div
-        class="control"
-      >
-        <button
-          class="button"
-          data-testid="submit"
-          type="submit"
-        >
-          Log In
-        </button>
-      </div>
-    </form>
-  </div>
+    </div>
+  </section>
 </DocumentFragment>
 `;
