@@ -39,21 +39,28 @@ export const RefreshTokensPage = () => {
   };
 
   return (
-    <>
+    <section className="section">
       {tokens && (
         <div className="container">
           <Breadcrumb
             items={[{ url: "/refreshtokens", text: "Refresh Tokens" }]}
           />
-          <h3 className="title">Refresh Tokens</h3>
-          <div className="buttons">
-            <button
-              className="button is-danger"
-              data-testid="deleteSelected"
-              onClick={() => onDeleteSelectedTokens()}
-            >
-              Delete Selected
-            </button>
+          <div className="level is-mobile mb-4">
+            <div className="level-left">
+              <h1 className="title is-3 mb-0">Refresh Tokens</h1>
+            </div>
+            <div className="level-right">
+              <button
+                className="button is-danger is-light"
+                data-testid="deleteSelected"
+                onClick={() => onDeleteSelectedTokens()}
+              >
+                <span className="icon">
+                  <i className="fas fa-trash-alt"></i>
+                </span>
+                <span>Delete Selected</span>
+              </button>
+            </div>
           </div>
           <TableWithSelectors
             columns={[
@@ -70,6 +77,6 @@ export const RefreshTokensPage = () => {
           />
         </div>
       )}
-    </>
+    </section>
   );
 };

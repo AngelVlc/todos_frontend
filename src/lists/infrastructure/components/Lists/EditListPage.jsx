@@ -23,7 +23,7 @@ export const EditListPage = () => {
   }, [listId, getExistingList]);
 
   return (
-    <>
+    <section className="section">
       {pageState && (
         <div className="container">
           <Breadcrumb
@@ -35,24 +35,29 @@ export const EditListPage = () => {
               },
             ]}
           />
-          <h3 className="title">{`Edit list '${pageState.name}'`}</h3>
-          <ListForm
-            list={pageState}
-            preCancel={
-              <div className="control">
-                <button
-                  className="button"
-                  data-testid="read"
-                  type="button"
-                  onClick={() => history.push(`/lists/${listId}/read`)}
-                >
-                  READ
-                </button>
-              </div>
-            }
-          />
+          <div className="max-w-800 mx-auto">
+            <h1 className="title is-3 mb-5">{`Edit list '${pageState.name}'`}</h1>
+            <ListForm
+              list={pageState}
+              preCancel={
+                <div className="control">
+                  <button
+                    className="button is-info is-light"
+                    data-testid="read"
+                    type="button"
+                    onClick={() => history.push(`/lists/${listId}/read`)}
+                  >
+                    <span className="icon">
+                      <i className="fas fa-eye"></i>
+                    </span>
+                    <span>View</span>
+                  </button>
+                </div>
+              }
+            />
+          </div>
         </div>
       )}
-    </>
+    </section>
   );
 };

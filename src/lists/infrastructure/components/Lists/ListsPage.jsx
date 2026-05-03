@@ -59,71 +59,106 @@ export const ListsPage = () => {
   }
 
   return (
-    <>
+    <section className="section">
       <Modal ref={searchListRef} showOk={false}>
         <SearchListsComponent searchSecureKey={searchSecureKey} />
       </Modal>
-      {lists && (
+      {lists !== undefined && (
         <div className="container">
           <Breadcrumb items={[{ url: "/lists", text: "Lists" }]} />
-          <h3 className="title">LISTS</h3>
-          <table className="table">
-            <thead>
-              <tr>
-                <td>Name</td>
-                <td>Category</td>
-                <td># Items</td>
-                <td>
+          <div className="level is-mobile mb-4">
+            <div className="level-left">
+              <h1 className="title is-3 mb-0">Lists</h1>
+            </div>
+            <div className="level-right">
+              <div className="field is-grouped">
+                <div className="control">
                   <button
-                    className="button is-small mr-2"
+                    className="button is-info is-light"
                     data-testid="search"
                     onClick={() => onSearchClick()}
                   >
-                    <span className="icon is-small">
+                    <span className="icon">
                       <i className="fas fa-search"></i>
                     </span>
+                    <span>Search</span>
                   </button>
+                </div>
+                <div className="control">
                   <button
-                    className="button is-small"
+                    className="button is-primary"
                     data-testid="addNew"
                     onClick={() => onNewClick()}
                   >
-                    <span className="icon is-small">
+                    <span className="icon">
                       <i className="fas fa-plus"></i>
                     </span>
+                    <span>New List</span>
                   </button>
-                </td>
-              </tr>
-            </thead>
-            <tbody>
-              {lists.length > 0 &&
-                lists.map((list) => (
-                  <tr
-                    className="is-clickable"
-                    key={list.id}
-                    onClick={() => history.push(`/lists/${list.id}`)}
-                    data-testid={`viewList${list.id}`}
-                  >
-                    <td>{list.name}</td>
-                    <td>{list.categoryName}</td>
-                    <td>
-                      <center>{list.itemsCount}</center>
-                    </td>
-                    <td onClick={(e) => e.stopPropagation()}>
-                      <center>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {lists.length > 0 ? (
+            <div className="table-container">
+              <table className="table is-fullwidth is-striped is-hoverable">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th className="has-text-centered"># Items</th>
+                    <th className="has-text-right">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {lists.map((list) => (
+                    <tr
+                      className="is-clickable"
+                      key={list.id}
+                      onClick={() => history.push(`/lists/${list.id}`)}
+                      data-testid={`viewList${list.id}`}
+                    >
+                      <td className="has-text-weight-semibold">{list.name}</td>
+                      <td>{list.categoryName || '-'}</td>
+                      <td className="has-text-centered">
+                        <span className="tag is-light is-info">{list.itemsCount}</span>
+                      </td>
+                      <td className="has-text-right" onClick={(e) => e.stopPropagation()}>
                         <Link
-                          className="has-text-black delete"
+                          className="button is-small is-danger is-light"
                           data-testid={`deleteList${list.id}`}
                           to={`/lists/${list.id}/delete`}
-                        ></Link>
-                      </center>
-                    </td>
-                  </tr>
-                ))}
-            </tbody>
-          </table>
+                        >
+                          <span className="icon is-small">
+                            <i className="fas fa-trash"></i>
+                          </span>
+                        </Link>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <div className="has-text-centered py-6">
+              <span className="icon is-large has-text-grey-light">
+                <i className="fas fa-inbox fa-3x"></i>
+              </span>
+              <p className="mt-4 mb-4">No lists found. Create your first one!</p>
+              <button
+                className="button is-primary"
+                onClick={() => onNewClick()}
+              >
+                <span className="icon">
+                  <i className="fas fa-plus"></i>
+                </span>
+                <span>Create List</span>
+              </button>
+            </div>
+          )}
         </div>
       )}
-    </>
+    </section>
   );
 };

@@ -2,74 +2,197 @@
 
 exports[`HomePage when the user is an admin should match the snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="container"
+  <section
+    class="section"
   >
-    <h3
-      class="title"
-    >
-      HOME
-    </h3>
     <div
-      class="box"
+      class="container"
     >
-      <h6
-        class="subtitle is-6"
+      <h1
+        class="title has-text-centered mb-6"
       >
-        Admin
-      </h6>
+        Welcome to To Dos
+      </h1>
       <div
-        class="buttons"
+        class="mb-6"
       >
-        <button
-          class="button is-small"
-          data-testid="users"
+        <h2
+          class="subtitle is-5 has-text-grey mb-4"
         >
-          Users
-        </button>
-        <button
-          class="button is-small"
-          data-testid="refreshTokens"
+          Admin
+        </h2>
+        <div
+          class="columns is-multiline"
         >
-          Refresh Tokens
-        </button>
-        <button
-          class="button is-small"
-          data-testid="indexLists"
-        >
-          Index All Lists
-        </button>
+          <div
+            class="column is-4"
+          >
+            <div
+              class="card is-hoverable"
+              style="cursor: pointer;"
+            >
+              <div
+                class="card-content has-text-centered"
+              >
+                <span
+                  class="icon is-large has-text-info"
+                >
+                  <i
+                    class="fas fa-users fa-2x"
+                  />
+                </span>
+                <p
+                  class="title is-5 mt-3"
+                >
+                  Users
+                </p>
+                <button
+                  class="button is-info is-light is-fullwidth mt-3"
+                  data-testid="users"
+                >
+                  Manage
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="column is-4"
+          >
+            <div
+              class="card is-hoverable"
+              style="cursor: pointer;"
+            >
+              <div
+                class="card-content has-text-centered"
+              >
+                <span
+                  class="icon is-large has-text-warning"
+                >
+                  <i
+                    class="fas fa-key fa-2x"
+                  />
+                </span>
+                <p
+                  class="title is-5 mt-3"
+                >
+                  Refresh Tokens
+                </p>
+                <button
+                  class="button is-warning is-light is-fullwidth mt-3"
+                  data-testid="refreshTokens"
+                >
+                  Manage
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="column is-4"
+          >
+            <div
+              class="card is-hoverable"
+              style="cursor: pointer;"
+            >
+              <div
+                class="card-content has-text-centered"
+              >
+                <span
+                  class="icon is-large has-text-success"
+                >
+                  <i
+                    class="fas fa-list-ul fa-2x"
+                  />
+                </span>
+                <p
+                  class="title is-5 mt-3"
+                >
+                  Index All Lists
+                </p>
+                <button
+                  class="button is-success is-light is-fullwidth mt-3"
+                  data-testid="indexLists"
+                >
+                  Index
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div
-      class="box"
-    >
-      <h6
-        class="subtitle is-6"
-      >
-        Lists
-      </h6>
-      <div
-        class="buttons"
-      >
-        <button
-          class="button is-small"
-          data-testid="lists"
+      <div>
+        <h2
+          class="subtitle is-5 has-text-grey mb-4"
         >
           Lists
-        </button>
-      </div>
-      <div
-        class="buttons"
-      >
-        <button
-          class="button is-small"
-          data-testid="categories"
+        </h2>
+        <div
+          class="columns is-multiline"
         >
-          Categories
-        </button>
+          <div
+            class="column is-4"
+          >
+            <div
+              class="card is-hoverable"
+              style="cursor: pointer;"
+            >
+              <div
+                class="card-content has-text-centered"
+              >
+                <span
+                  class="icon is-large has-text-primary"
+                >
+                  <i
+                    class="fas fa-list fa-2x"
+                  />
+                </span>
+                <p
+                  class="title is-5 mt-3"
+                >
+                  Lists
+                </p>
+                <button
+                  class="button is-primary is-light is-fullwidth mt-3"
+                  data-testid="lists"
+                >
+                  View All
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="column is-4"
+          >
+            <div
+              class="card is-hoverable"
+              style="cursor: pointer;"
+            >
+              <div
+                class="card-content has-text-centered"
+              >
+                <span
+                  class="icon is-large has-text-link"
+                >
+                  <i
+                    class="fas fa-tags fa-2x"
+                  />
+                </span>
+                <p
+                  class="title is-5 mt-3"
+                >
+                  Categories
+                </p>
+                <button
+                  class="button is-link is-light is-fullwidth mt-3"
+                  data-testid="categories"
+                >
+                  View All
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </DocumentFragment>
 `;

@@ -2,358 +2,517 @@
 
 exports[`UserForm should match the snapshot for a new user 1`] = `
 <DocumentFragment>
-  <form
-    action="#"
+  <div
+    class="card is-shadowless"
   >
     <div
-      class="field"
+      class="card-content"
     >
-      <label
-        class="label"
-        for="name"
+      <form
+        action="#"
       >
-        Name
-      </label>
-      <div
-        class="control"
-      >
-        <input
-          data-testid="name"
-          name="name"
-          type="text"
-          value=""
-        />
-      </div>
-      <p
-        class="help is-danger"
-        data-testid="nameErrors"
-      />
-    </div>
-    <div
-      class="field"
-    >
-      <label
-        class="label"
-        for="password"
-      >
-        Password
-      </label>
-      <div
-        class="control"
-      >
-        <input
-          data-testid="password"
-          name="password"
-          type="password"
-          value=""
-        />
-      </div>
-    </div>
-    <div
-      class="field"
-    >
-      <label
-        class="label"
-        for="confirmPassword"
-      >
-        Confirm Password
-      </label>
-      <div
-        class="control"
-      >
-        <input
-          data-testid="confirmPassword"
-          name="confirmPassword"
-          type="password"
-          value=""
-        />
-      </div>
-    </div>
-    <div
-      class="field"
-    >
-      <label
-        class="label"
-        for="isAdmin"
-      >
-        Is Admin
-      </label>
-      <div
-        class="control"
-      >
-        <input
-          data-testid="isAdmin"
-          name="isAdmin"
-          type="checkbox"
-          value="false"
-        />
-      </div>
-    </div>
-    <div
-      class="field is-grouped"
-    >
-      <div
-        class="control"
-      >
-        <button
-          class="button"
-          data-testid="submit"
-          type="submit"
+        <div
+          class="field"
         >
-          CREATE
-        </button>
-      </div>
-      <div
-        class="control"
-      >
-        <button
-          class="button"
-          data-testid="cancel"
-          type="button"
+          <label
+            class="label"
+            for="name"
+          >
+            Name
+          </label>
+          <div
+            class="control has-icons-left"
+          >
+            <input
+              class="input"
+              data-testid="name"
+              name="name"
+              placeholder="Enter username"
+              type="text"
+              value=""
+            />
+            <span
+              class="icon is-small is-left"
+            >
+              <i
+                class="fas fa-user"
+              />
+            </span>
+          </div>
+          <p
+            class="help is-danger"
+            data-testid="nameErrors"
+          />
+        </div>
+        <div
+          class="field"
         >
-          CANCEL
-        </button>
-      </div>
+          <label
+            class="label"
+            for="password"
+          >
+            Password
+          </label>
+          <div
+            class="control has-icons-left"
+          >
+            <input
+              class="input"
+              data-testid="password"
+              name="password"
+              placeholder="Enter password"
+              type="password"
+              value=""
+            />
+            <span
+              class="icon is-small is-left"
+            >
+              <i
+                class="fas fa-lock"
+              />
+            </span>
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="label"
+            for="confirmPassword"
+          >
+            Confirm Password
+          </label>
+          <div
+            class="control has-icons-left"
+          >
+            <input
+              class="input"
+              data-testid="confirmPassword"
+              name="confirmPassword"
+              placeholder="Confirm password"
+              type="password"
+              value=""
+            />
+            <span
+              class="icon is-small is-left"
+            >
+              <i
+                class="fas fa-lock"
+              />
+            </span>
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="label"
+            for="isAdmin"
+          >
+            Is Admin
+          </label>
+          <div
+            class="control"
+          >
+            <label
+              class="checkbox"
+            >
+              <input
+                data-testid="isAdmin"
+                name="isAdmin"
+                type="checkbox"
+                value="false"
+              />
+              <span
+                class="ml-2"
+              >
+                User has admin privileges
+              </span>
+            </label>
+          </div>
+        </div>
+        <div
+          class="field is-grouped is-grouped-right mt-6"
+        >
+          <div
+            class="control"
+          >
+            <button
+              class="button is-light"
+              data-testid="cancel"
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
+          <div
+            class="control"
+          >
+            <button
+              class="button is-info"
+              data-testid="submit"
+              type="submit"
+            >
+              <span
+                class="icon"
+              >
+                <i
+                  class="fas fa-save"
+                />
+              </span>
+              <span>
+                Create User
+              </span>
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
-  </form>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`UserForm should match the snapshot for an existing admin user 1`] = `
 <DocumentFragment>
-  <form
-    action="#"
+  <div
+    class="card is-shadowless"
   >
     <div
-      class="field"
+      class="card-content"
     >
-      <label
-        class="label"
-        for="name"
+      <form
+        action="#"
       >
-        Name
-      </label>
-      <div
-        class="control"
-      >
-        <input
-          data-testid="name"
-          name="name"
-          type="text"
-          value="user"
-        />
-      </div>
-      <p
-        class="help is-danger"
-        data-testid="nameErrors"
-      />
-    </div>
-    <div
-      class="field"
-    >
-      <label
-        class="label"
-        for="password"
-      >
-        Password
-      </label>
-      <div
-        class="control"
-      >
-        <input
-          data-testid="password"
-          name="password"
-          type="password"
-          value=""
-        />
-      </div>
-    </div>
-    <div
-      class="field"
-    >
-      <label
-        class="label"
-        for="confirmPassword"
-      >
-        Confirm Password
-      </label>
-      <div
-        class="control"
-      >
-        <input
-          data-testid="confirmPassword"
-          name="confirmPassword"
-          type="password"
-          value=""
-        />
-      </div>
-    </div>
-    <div
-      class="field"
-    >
-      <label
-        class="label"
-        for="isAdmin"
-      >
-        Is Admin
-      </label>
-      <div
-        class="control"
-      >
-        <input
-          checked=""
-          data-testid="isAdmin"
-          name="isAdmin"
-          type="checkbox"
-          value="true"
-        />
-      </div>
-    </div>
-    <div
-      class="field is-grouped"
-    >
-      <div
-        class="control"
-      >
-        <button
-          class="button"
-          data-testid="submit"
-          type="submit"
+        <div
+          class="field"
         >
-          UPDATE
-        </button>
-      </div>
-      <div
-        class="control"
-      >
-        <button
-          class="button"
-          data-testid="cancel"
-          type="button"
+          <label
+            class="label"
+            for="name"
+          >
+            Name
+          </label>
+          <div
+            class="control has-icons-left"
+          >
+            <input
+              class="input"
+              data-testid="name"
+              name="name"
+              placeholder="Enter username"
+              type="text"
+              value="user"
+            />
+            <span
+              class="icon is-small is-left"
+            >
+              <i
+                class="fas fa-user"
+              />
+            </span>
+          </div>
+          <p
+            class="help is-danger"
+            data-testid="nameErrors"
+          />
+        </div>
+        <div
+          class="field"
         >
-          CANCEL
-        </button>
-      </div>
+          <label
+            class="label"
+            for="password"
+          >
+            Password
+          </label>
+          <div
+            class="control has-icons-left"
+          >
+            <input
+              class="input"
+              data-testid="password"
+              name="password"
+              placeholder="Enter password"
+              type="password"
+              value=""
+            />
+            <span
+              class="icon is-small is-left"
+            >
+              <i
+                class="fas fa-lock"
+              />
+            </span>
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="label"
+            for="confirmPassword"
+          >
+            Confirm Password
+          </label>
+          <div
+            class="control has-icons-left"
+          >
+            <input
+              class="input"
+              data-testid="confirmPassword"
+              name="confirmPassword"
+              placeholder="Confirm password"
+              type="password"
+              value=""
+            />
+            <span
+              class="icon is-small is-left"
+            >
+              <i
+                class="fas fa-lock"
+              />
+            </span>
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="label"
+            for="isAdmin"
+          >
+            Is Admin
+          </label>
+          <div
+            class="control"
+          >
+            <label
+              class="checkbox"
+            >
+              <input
+                checked=""
+                data-testid="isAdmin"
+                name="isAdmin"
+                type="checkbox"
+                value="true"
+              />
+              <span
+                class="ml-2"
+              >
+                User has admin privileges
+              </span>
+            </label>
+          </div>
+        </div>
+        <div
+          class="field is-grouped is-grouped-right mt-6"
+        >
+          <div
+            class="control"
+          >
+            <button
+              class="button is-light"
+              data-testid="cancel"
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
+          <div
+            class="control"
+          >
+            <button
+              class="button is-info"
+              data-testid="submit"
+              type="submit"
+            >
+              <span
+                class="icon"
+              >
+                <i
+                  class="fas fa-save"
+                />
+              </span>
+              <span>
+                Update User
+              </span>
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
-  </form>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`UserForm should match the snapshot for an existing non admin user 1`] = `
 <DocumentFragment>
-  <form
-    action="#"
+  <div
+    class="card is-shadowless"
   >
     <div
-      class="field"
+      class="card-content"
     >
-      <label
-        class="label"
-        for="name"
+      <form
+        action="#"
       >
-        Name
-      </label>
-      <div
-        class="control"
-      >
-        <input
-          data-testid="name"
-          name="name"
-          type="text"
-          value="user"
-        />
-      </div>
-      <p
-        class="help is-danger"
-        data-testid="nameErrors"
-      />
-    </div>
-    <div
-      class="field"
-    >
-      <label
-        class="label"
-        for="password"
-      >
-        Password
-      </label>
-      <div
-        class="control"
-      >
-        <input
-          data-testid="password"
-          name="password"
-          type="password"
-          value=""
-        />
-      </div>
-    </div>
-    <div
-      class="field"
-    >
-      <label
-        class="label"
-        for="confirmPassword"
-      >
-        Confirm Password
-      </label>
-      <div
-        class="control"
-      >
-        <input
-          data-testid="confirmPassword"
-          name="confirmPassword"
-          type="password"
-          value=""
-        />
-      </div>
-    </div>
-    <div
-      class="field"
-    >
-      <label
-        class="label"
-        for="isAdmin"
-      >
-        Is Admin
-      </label>
-      <div
-        class="control"
-      >
-        <input
-          data-testid="isAdmin"
-          name="isAdmin"
-          type="checkbox"
-          value="false"
-        />
-      </div>
-    </div>
-    <div
-      class="field is-grouped"
-    >
-      <div
-        class="control"
-      >
-        <button
-          class="button"
-          data-testid="submit"
-          type="submit"
+        <div
+          class="field"
         >
-          UPDATE
-        </button>
-      </div>
-      <div
-        class="control"
-      >
-        <button
-          class="button"
-          data-testid="cancel"
-          type="button"
+          <label
+            class="label"
+            for="name"
+          >
+            Name
+          </label>
+          <div
+            class="control has-icons-left"
+          >
+            <input
+              class="input"
+              data-testid="name"
+              name="name"
+              placeholder="Enter username"
+              type="text"
+              value="user"
+            />
+            <span
+              class="icon is-small is-left"
+            >
+              <i
+                class="fas fa-user"
+              />
+            </span>
+          </div>
+          <p
+            class="help is-danger"
+            data-testid="nameErrors"
+          />
+        </div>
+        <div
+          class="field"
         >
-          CANCEL
-        </button>
-      </div>
+          <label
+            class="label"
+            for="password"
+          >
+            Password
+          </label>
+          <div
+            class="control has-icons-left"
+          >
+            <input
+              class="input"
+              data-testid="password"
+              name="password"
+              placeholder="Enter password"
+              type="password"
+              value=""
+            />
+            <span
+              class="icon is-small is-left"
+            >
+              <i
+                class="fas fa-lock"
+              />
+            </span>
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="label"
+            for="confirmPassword"
+          >
+            Confirm Password
+          </label>
+          <div
+            class="control has-icons-left"
+          >
+            <input
+              class="input"
+              data-testid="confirmPassword"
+              name="confirmPassword"
+              placeholder="Confirm password"
+              type="password"
+              value=""
+            />
+            <span
+              class="icon is-small is-left"
+            >
+              <i
+                class="fas fa-lock"
+              />
+            </span>
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="label"
+            for="isAdmin"
+          >
+            Is Admin
+          </label>
+          <div
+            class="control"
+          >
+            <label
+              class="checkbox"
+            >
+              <input
+                data-testid="isAdmin"
+                name="isAdmin"
+                type="checkbox"
+                value="false"
+              />
+              <span
+                class="ml-2"
+              >
+                User has admin privileges
+              </span>
+            </label>
+          </div>
+        </div>
+        <div
+          class="field is-grouped is-grouped-right mt-6"
+        >
+          <div
+            class="control"
+          >
+            <button
+              class="button is-light"
+              data-testid="cancel"
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
+          <div
+            class="control"
+          >
+            <button
+              class="button is-info"
+              data-testid="submit"
+              type="submit"
+            >
+              <span
+                class="icon"
+              >
+                <i
+                  class="fas fa-save"
+                />
+              </span>
+              <span>
+                Update User
+              </span>
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
-  </form>
+  </div>
 </DocumentFragment>
 `;

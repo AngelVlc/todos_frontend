@@ -3,141 +3,178 @@
 exports[`TableWithSelectors should match the snapshot 1`] = `
 <DocumentFragment>
   <div>
-    <table
-      class="table"
+    <div
+      class="table-container"
     >
-      <thead>
-        <tr>
-          <td
-            data-testid="header-col1"
-          >
-            <span
-              class="icon is-inline"
+      <table
+        class="table is-fullwidth is-striped is-hoverable"
+      >
+        <thead>
+          <tr>
+            <td
+              data-testid="header-col1"
             >
-              Col 1
-              <i
-                class="ml-1 fas fa-thin fa-sort-up"
-              />
-            </span>
-          </td>
-          <td
-            data-testid="header-col2"
-          >
-            <span
-              class="icon is-inline"
+              <span
+                class="icon is-inline"
+              >
+                Col 1
+                <i
+                  class="ml-1 fas fa-thin fa-sort-up"
+                />
+              </span>
+            </td>
+            <td
+              data-testid="header-col2"
             >
-              Col 2
-            </span>
-          </td>
-          <td
-            data-testid="header-col3"
-          >
-            <span
-              class="icon is-inline"
+              <span
+                class="icon is-inline"
+              >
+                Col 2
+              </span>
+            </td>
+            <td
+              data-testid="header-col3"
             >
-              Col 3
-            </span>
-          </td>
-          <td>
-            <center>
+              <span
+                class="icon is-inline"
+              >
+                Col 3
+              </span>
+            </td>
+            <th
+              class="has-text-centered"
+              style="width: 50px;"
+            >
               <input
                 data-testid="toggleSelectAll"
                 type="checkbox"
               />
-            </center>
-          </td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            11
-          </td>
-          <td>
-            12
-          </td>
-          <td>
-            13
-          </td>
-          <td>
-            <center>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              11
+            </td>
+            <td>
+              12
+            </td>
+            <td>
+              13
+            </td>
+            <td
+              class="has-text-centered"
+            >
               <input
                 data-testid="checkBoxItem11"
                 type="checkbox"
               />
-            </center>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            21
-          </td>
-          <td>
-            22
-          </td>
-          <td>
-            23
-          </td>
-          <td>
-            <center>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              21
+            </td>
+            <td>
+              22
+            </td>
+            <td>
+              23
+            </td>
+            <td
+              class="has-text-centered"
+            >
               <input
                 data-testid="checkBoxItem21"
                 type="checkbox"
               />
-            </center>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <div
-      class="level"
+      class="level is-mobile mt-4"
     >
       <div
         class="level-left"
       >
         <div
-          class="ml-3 level-item"
+          class="pagination-container"
         >
-          <input
-            class="pageNumber"
-            data-testid="pagenumber-input"
-            min="1"
-            type="number"
-            value=""
-          />
-          <span
-            class="icon"
+          <nav
+            aria-label="pagination"
+            class="pagination"
+            role="navigation"
           >
-            <i
-              class="fas fa-thin fa-forward"
-            />
-          </span>
+            <button
+              class="pagination-previous"
+            >
+              Previous
+            </button>
+            <button
+              class="pagination-next"
+            >
+              Next
+            </button>
+            <ul
+              class="pagination-list"
+            >
+              <li>
+                <input
+                  class="input"
+                  data-testid="pagenumber-input"
+                  max="999"
+                  min="1"
+                  style="width: 60px; text-align: center;"
+                  type="number"
+                  value=""
+                />
+              </li>
+            </ul>
+          </nav>
         </div>
+      </div>
+      <div
+        class="level-right"
+      >
         <div
-          class="ml-3 level-item"
+          class="page-size-selector"
         >
-          <span>
-            Per page: 
-          </span>
-          <select
-            data-testid="pagesize-select"
+          <span
+            class="mr-2"
           >
-            <option
-              value="5"
+            Items per page:
+          </span>
+          <div
+            class="select is-small"
+          >
+            <select
+              data-testid="pagesize-select"
             >
-              5
-            </option>
-            <option
-              value="10"
-            >
-              10
-            </option>
-            <option
-              value="20"
-            >
-              20
-            </option>
-          </select>
+              <option
+                value="5"
+              >
+                5
+              </option>
+              <option
+                value="10"
+              >
+                10
+              </option>
+              <option
+                value="20"
+              >
+                20
+              </option>
+              <option
+                value="50"
+              >
+                50
+              </option>
+            </select>
+          </div>
         </div>
       </div>
     </div>

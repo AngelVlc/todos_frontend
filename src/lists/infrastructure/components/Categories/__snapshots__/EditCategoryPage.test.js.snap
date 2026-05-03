@@ -2,123 +2,175 @@
 
 exports[`EditCategoryPage should match the snapshot for an existing category 1`] = `
 <DocumentFragment>
-  <div
-    class="container"
+  <section
+    class="section"
   >
-    <nav
-      aria-label="breadcrumbs"
-      class="breadcrumb"
+    <div
+      class="container"
     >
-      <ul>
-        <li>
-          <a
-            href="/"
-          >
-            Home
-          </a>
-        </li>
-        <li>
-          <a
-            href="/categories"
-          >
-            Categories
-          </a>
-        </li>
-        <li
-          class="is-active"
-        >
-          <a
-            aria-current="page"
-            href="/categories/2"
-          >
-            category name
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <h3
-      class="title"
-    >
-      Edit category 'category name'
-    </h3>
-    <form
-      action="#"
-    >
-      <div
-        class="field"
+      <nav
+        aria-label="breadcrumbs"
+        class="breadcrumb has-arrow-separator mb-4"
       >
-        <label
-          class="label"
-          for="name"
-        >
-          Name
-        </label>
-        <div
-          class="control"
-        >
-          <input
-            data-testid="name"
-            name="name"
-            type="text"
-            value="category name"
-          />
-        </div>
-        <p
-          class="help is-danger"
-          data-testid="nameErrors"
-        />
-      </div>
-      <div
-        class="field"
-      >
-        <label
-          class="label"
-          for="description"
-        >
-          Description
-        </label>
-        <div
-          class="control"
-        >
-          <input
-            data-testid="description"
-            name="description"
-            type="text"
-            value="category description"
-          />
-        </div>
-        <p
-          class="help is-danger"
-          data-testid="descriptionErrors"
-        />
-      </div>
-      <div
-        class="field is-grouped"
-      >
-        <div
-          class="control"
-        >
-          <button
-            class="button"
-            data-testid="submit"
-            type="submit"
+        <ul>
+          <li>
+            <a
+              href="/"
+            >
+              <span
+                class="icon is-small"
+              >
+                <i
+                  class="fas fa-home"
+                />
+              </span>
+              <span>
+                Home
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/categories"
+            >
+              Categories
+            </a>
+          </li>
+          <li
+            class="is-active"
           >
-            SAVE
-          </button>
-        </div>
-        <div
-          class="control"
+            <a
+              aria-current="page"
+              href="/categories/2"
+            >
+              category name
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="max-w-600 mx-auto"
+      >
+        <h1
+          class="title is-3 mb-5"
         >
-          <button
-            class="button"
-            data-testid="cancel"
-            type="button"
+          Edit category 'category name'
+        </h1>
+        <div
+          class="card is-shadowless"
+        >
+          <div
+            class="card-content"
           >
-            CANCEL
-          </button>
+            <form
+              action="#"
+            >
+              <div
+                class="field"
+              >
+                <label
+                  class="label"
+                  for="name"
+                >
+                  Name
+                </label>
+                <div
+                  class="control has-icons-left"
+                >
+                  <input
+                    class="input"
+                    data-testid="name"
+                    name="name"
+                    placeholder="Enter category name"
+                    type="text"
+                    value="category name"
+                  />
+                  <span
+                    class="icon is-small is-left"
+                  >
+                    <i
+                      class="fas fa-tag"
+                    />
+                  </span>
+                </div>
+                <p
+                  class="help is-danger"
+                  data-testid="nameErrors"
+                />
+              </div>
+              <div
+                class="field"
+              >
+                <label
+                  class="label"
+                  for="description"
+                >
+                  Description
+                </label>
+                <div
+                  class="control has-icons-left"
+                >
+                  <input
+                    class="input"
+                    data-testid="description"
+                    name="description"
+                    placeholder="Enter description (optional)"
+                    type="text"
+                    value="category description"
+                  />
+                  <span
+                    class="icon is-small is-left"
+                  >
+                    <i
+                      class="fas fa-align-left"
+                    />
+                  </span>
+                </div>
+                <p
+                  class="help is-danger"
+                  data-testid="descriptionErrors"
+                />
+              </div>
+              <div
+                class="field is-grouped is-grouped-right mt-6"
+              >
+                <div
+                  class="control"
+                >
+                  <button
+                    class="button is-light"
+                    data-testid="cancel"
+                    type="button"
+                  >
+                    Cancel
+                  </button>
+                </div>
+                <div
+                  class="control"
+                >
+                  <button
+                    class="button is-link"
+                    data-testid="submit"
+                    type="submit"
+                  >
+                    <span
+                      class="icon"
+                    >
+                      <i
+                        class="fas fa-save"
+                      />
+                    </span>
+                    <span>
+                      Save Changes
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-    </form>
-  </div>
+    </div>
+  </section>
 </DocumentFragment>
 `;

@@ -5,15 +5,19 @@ import { ListForm } from "./ListForm";
 
 export const NewListPage = () => {
   return (
-    <div className="container">
-      <Breadcrumb
-        items={[
-          { url: "/lists", text: "Lists" },
-          { url: "/lists/new", text: "New" },
-        ]}
-      />
-      <h3 className="title">New list</h3>
-      <ListForm list={List.createEmpty()} />
-    </div>
+    <section className="section">
+      <div className="container">
+        <Breadcrumb
+          items={[
+            { url: "/lists", text: "Lists" },
+            { url: "/lists/new", text: "New" },
+          ]}
+        />
+        <div className="max-w-800 mx-auto">
+          <h1 className="title is-3 mb-5">New List</h1>
+          <ListForm list={List.createEmpty()} />
+        </div>
+      </div>
+    </section>
   );
 };

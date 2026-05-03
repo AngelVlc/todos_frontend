@@ -2,54 +2,112 @@
 
 exports[`IndexAllListsPage should match the snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="container"
+  <section
+    class="section"
   >
-    <nav
-      aria-label="breadcrumbs"
-      class="breadcrumb"
-    >
-      <ul>
-        <li>
-          <a
-            href="/"
-          >
-            Home
-          </a>
-        </li>
-        <li
-          class="is-active"
-        >
-          <a
-            aria-current="page"
-            href="/index-all-lists"
-          >
-            Index All Lists
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <h3
-      class="title"
-    >
-      Index All Lists
-    </h3>
     <div
-      class="buttons"
+      class="container"
     >
-      <button
-        class="button is-danger"
-        data-testid="yes"
+      <nav
+        aria-label="breadcrumbs"
+        class="breadcrumb has-arrow-separator mb-4"
       >
-        YES
-      </button>
-      <button
-        class="button"
-        data-testid="no"
+        <ul>
+          <li>
+            <a
+              href="/"
+            >
+              <span
+                class="icon is-small"
+              >
+                <i
+                  class="fas fa-home"
+                />
+              </span>
+              <span>
+                Home
+              </span>
+            </a>
+          </li>
+          <li
+            class="is-active"
+          >
+            <a
+              aria-current="page"
+              href="/index-all-lists"
+            >
+              Index All Lists
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="max-w-600 mx-auto"
       >
-        NO
-      </button>
+        <div
+          class="card is-shadowless"
+        >
+          <div
+            class="card-content"
+          >
+            <div
+              class="has-text-centered mb-6"
+            >
+              <span
+                class="icon is-large has-text-primary"
+              >
+                <i
+                  class="fas fa-database fa-3x"
+                />
+              </span>
+              <h1
+                class="title is-3 mt-4"
+              >
+                Index All Lists
+              </h1>
+              <p
+                class="subtitle is-6 has-text-grey mt-2"
+              >
+                This will re-index all lists in the search engine
+              </p>
+            </div>
+            <div
+              class="field is-grouped is-grouped-centered mt-6"
+            >
+              <div
+                class="control"
+              >
+                <button
+                  class="button is-primary"
+                  data-testid="yes"
+                >
+                  <span
+                    class="icon"
+                  >
+                    <i
+                      class="fas fa-sync-alt"
+                    />
+                  </span>
+                  <span>
+                    Start Indexing
+                  </span>
+                </button>
+              </div>
+              <div
+                class="control"
+              >
+                <button
+                  class="button is-light"
+                  data-testid="no"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 </DocumentFragment>
 `;

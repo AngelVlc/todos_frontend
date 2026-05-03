@@ -41,6 +41,10 @@ describe("Header", () => {
       info: { name: "user" },
     });
 
+    // Open dropdown
+    fireEvent.click(getByTestId("userDropdown"));
+    
+    // Click logout button
     await waitFor(() => {
       fireEvent.click(getByTestId("logOut"));
     });
@@ -67,19 +71,6 @@ describe("Header", () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it("should do logout", async () => {
-    const { getByTestId } = renderWithRouterAndContext({
-      info: { name: "user" },
-    });
-
-    await waitFor(() => {
-      fireEvent.click(getByTestId("logOut"));
-    });
-
-    expect(mockHistoryPush).toHaveBeenCalled();
-    expect(mockHistoryPush.mock.calls[0][0]).toBe("/login");
-  });
-
   it("should go to root", async () => {
     const { getByTestId } = renderWithRouterAndContext({
       info: { name: "user" },
@@ -104,6 +95,19 @@ describe("Header", () => {
 
     expect(mockHistoryPush).toHaveBeenCalled();
     expect(mockHistoryPush.mock.calls[0][0]).toBe("/lists");
+  });
+
+  it("should go to categories", async () => {
+    const { getByTestId } = renderWithRouterAndContext({
+      info: { name: "user" },
+    });
+
+    await waitFor(() => {
+      fireEvent.click(getByTestId("goToCategories"));
+    });
+
+    expect(mockHistoryPush).toHaveBeenCalled();
+    expect(mockHistoryPush.mock.calls[0][0]).toBe("/categories");
   });
 
   it("should go to users", async () => {

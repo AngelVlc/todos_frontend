@@ -27,50 +27,65 @@ export const CategoryForm = (props) => {
   };
 
   return (
+    <div className="card is-shadowless">
+      <div className="card-content">
     <Formik
       enableReinitialize={true}
       initialValues={pageState}
+      validateOnChange={false}
+      validateOnBlur={false}
       validationSchema={Yup.object({
         name: Yup.string().required("Required"),
       })}
       onSubmit={onSubmit}
     >
-      <Form>
-        <div className="field">
-          <label className="label" htmlFor="name">
-            Name
-          </label>
-          <div className="control">
-            <Field name="name" type="text" data-testid="name" autoFocus />
-          </div>
-          <p className="help is-danger" data-testid="nameErrors">
-            <ErrorMessage name="name" />
-          </p>
-        </div>
-        <div className="field">
-          <label className="label" htmlFor="description">
-            Description
-          </label>
-          <div className="control">
-            <Field name="description" type="text" data-testid="description" autoFocus />
-          </div>
-          <p className="help is-danger" data-testid="descriptionErrors">
-            <ErrorMessage name="description" />
-          </p>
-        </div>
-        <div className="field is-grouped">
-          <div className="control">
-            <button className="button" data-testid="submit" type="submit">
-              {props.category?.id > 0 ? "SAVE" : "CREATE"}
-            </button>
-          </div>
-          <div className="control">
-            <button className="button" data-testid="cancel" type="button" onClick={() => history.push("/categories")}>
-              CANCEL
-            </button>
-          </div>
-        </div>
-      </Form>
-    </Formik>
+          <Form>
+            <div className="field">
+              <label className="label" htmlFor="name">
+                Name
+              </label>
+              <div className="control has-icons-left">
+                <Field name="name" type="text" className="input" data-testid="name" autoFocus placeholder="Enter category name" />
+                <span className="icon is-small is-left">
+                  <i className="fas fa-tag"></i>
+                </span>
+              </div>
+              <p className="help is-danger" data-testid="nameErrors">
+                <ErrorMessage name="name" />
+              </p>
+            </div>
+            <div className="field">
+              <label className="label" htmlFor="description">
+                Description
+              </label>
+              <div className="control has-icons-left">
+                <Field name="description" type="text" className="input" data-testid="description" placeholder="Enter description (optional)" />
+                <span className="icon is-small is-left">
+                  <i className="fas fa-align-left"></i>
+                </span>
+              </div>
+              <p className="help is-danger" data-testid="descriptionErrors">
+                <ErrorMessage name="description" />
+              </p>
+            </div>
+            <div className="field is-grouped is-grouped-right mt-6">
+              <div className="control">
+                <button className="button is-light" data-testid="cancel" type="button" onClick={() => history.push("/categories")}>
+                  Cancel
+                </button>
+              </div>
+              <div className="control">
+                <button className="button is-link" data-testid="submit" type="submit">
+                  <span className="icon">
+                    <i className="fas fa-save"></i>
+                  </span>
+                  <span>{props.category?.id > 0 ? "Save Changes" : "Create Category"}</span>
+                </button>
+              </div>
+            </div>
+          </Form>
+        </Formik>
+      </div>
+    </div>
   );
 };

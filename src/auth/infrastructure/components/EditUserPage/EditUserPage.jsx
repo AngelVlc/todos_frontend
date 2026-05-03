@@ -23,7 +23,7 @@ export const EditUserPage = () => {
   }, [userId, getUser]);
 
   return (
-    <>
+    <section className="section">
       {pageState && (
         <div className="container">
           <Breadcrumb
@@ -32,21 +32,12 @@ export const EditUserPage = () => {
               { url: `/users/${userId}`, text: pageState.name },
             ]}
           />
-          <h3 className="title">{`Edit user '${pageState.name}'`}</h3>
-          <UserForm user={pageState}>
-            <div className="control">
-              <button
-                className="button is-danger"
-                data-testid="delete"
-                type="button"
-                onClick={() => history.push(`/users/${userId}/delete`)}
-              >
-                DELETE
-              </button>
-            </div>
-          </UserForm>
+          <div className="max-w-600 mx-auto">
+            <h1 className="title is-3 mb-5">{`Edit user '${pageState.name}'`}</h1>
+            <UserForm user={pageState} />
+          </div>
         </div>
       )}
-    </>
+    </section>
   );
 };

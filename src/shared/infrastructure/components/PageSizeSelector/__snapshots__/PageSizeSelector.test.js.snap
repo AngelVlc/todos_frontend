@@ -3,30 +3,41 @@
 exports[`PageSizeSelector Should match the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="ml-3 level-item"
+    class="page-size-selector"
   >
-    <span>
-      Per page: 
-    </span>
-    <select
-      data-testid="pagesize-select"
+    <span
+      class="mr-2"
     >
-      <option
-        value="5"
+      Items per page:
+    </span>
+    <div
+      class="select is-small"
+    >
+      <select
+        data-testid="pagesize-select"
       >
-        5
-      </option>
-      <option
-        value="10"
-      >
-        10
-      </option>
-      <option
-        value="20"
-      >
-        20
-      </option>
-    </select>
+        <option
+          value="5"
+        >
+          5
+        </option>
+        <option
+          value="10"
+        >
+          10
+        </option>
+        <option
+          value="20"
+        >
+          20
+        </option>
+        <option
+          value="50"
+        >
+          50
+        </option>
+      </select>
+    </div>
   </div>
 </DocumentFragment>
 `;

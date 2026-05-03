@@ -24,23 +24,37 @@ export const PageSelector = (props) => {
   };
 
   return (
-    <div className="ml-3 level-item">
-      {props.paginationInfo.pageNumber > 1 && (
-        <span className="icon" onClick={() => previousPageClicked()}>
-          <i className="fas fa-thin fa-backward" />
-        </span>
-      )}
-      <input
-        type="number"
-        min="1"
-        value={props.paginationInfo.pageNumber}
-        className="pageNumber"
-        onChange={(e) => pageNumberChanged(e)}
-        data-testid='pagenumber-input'
-      ></input>
-      <span className="icon" onClick={() => nextPageClicked()}>
-        <i className="fas fa-thin fa-forward" />
-      </span>
+    <div className="pagination-container">
+      <nav className="pagination" role="navigation" aria-label="pagination">
+        <button 
+          className="pagination-previous" 
+          onClick={() => previousPageClicked()}
+          disabled={props.paginationInfo.pageNumber <= 1}
+        >
+          Previous
+        </button>
+        <button 
+          className="pagination-next" 
+          onClick={() => nextPageClicked()}
+          disabled={props.paginationInfo.pageNumber >= props.paginationInfo.totalPages}
+        >
+          Next
+        </button>
+        <ul className="pagination-list">
+          <li>
+            <input
+              type="number"
+              min="1"
+              max={props.paginationInfo.totalPages || 999}
+              value={props.paginationInfo.pageNumber}
+              className="input"
+              onChange={(e) => pageNumberChanged(e)}
+              data-testid='pagenumber-input'
+              style={{width: '60px', textAlign: 'center'}}
+            ></input>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 };
