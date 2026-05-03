@@ -15,6 +15,11 @@ exports[`Modal When the modal is hidden should match the snapshot 1`] = `
       <div
         class="box"
       >
+        <button
+          aria-label="close"
+          class="modal-close is-large"
+          data-testid="modalClose"
+        />
         <div
           class="content"
         >
@@ -29,30 +34,43 @@ exports[`Modal When the modal is hidden should match the snapshot 1`] = `
             class="control"
           >
             <button
-              class="button"
+              class="button is-primary"
               data-testid="modalOk"
             >
-              OK
+              <span
+                class="icon"
+              >
+                <i
+                  class="fas fa-check"
+                />
+              </span>
+              <span>
+                OK
+              </span>
             </button>
           </div>
           <div
             class="control"
           >
             <button
-              class="button"
+              class="button is-light"
               data-testid="modalCancel"
             >
-              CANCEL
+              <span
+                class="icon"
+              >
+                <i
+                  class="fas fa-times"
+                />
+              </span>
+              <span>
+                Cancel
+              </span>
             </button>
           </div>
         </div>
       </div>
     </div>
-    <button
-      aria-label="close"
-      class="modal-close is-large"
-      data-testid="modalClose"
-    />
   </div>
 </DocumentFragment>
 `;
@@ -72,6 +90,11 @@ exports[`Modal When the modal is visible should match the snapshot 1`] = `
       <div
         class="box"
       >
+        <button
+          aria-label="close"
+          class="modal-close is-large"
+          data-testid="modalClose"
+        />
         <div
           class="content"
         >
@@ -86,30 +109,43 @@ exports[`Modal When the modal is visible should match the snapshot 1`] = `
             class="control"
           >
             <button
-              class="button"
+              class="button is-primary"
               data-testid="modalOk"
             >
-              OK
+              <span
+                class="icon"
+              >
+                <i
+                  class="fas fa-check"
+                />
+              </span>
+              <span>
+                OK
+              </span>
             </button>
           </div>
           <div
             class="control"
           >
             <button
-              class="button"
+              class="button is-light"
               data-testid="modalCancel"
             >
-              CANCEL
+              <span
+                class="icon"
+              >
+                <i
+                  class="fas fa-times"
+                />
+              </span>
+              <span>
+                Cancel
+              </span>
             </button>
           </div>
         </div>
       </div>
     </div>
-    <button
-      aria-label="close"
-      class="modal-close is-large"
-      data-testid="modalClose"
-    />
   </div>
 </DocumentFragment>
 `;
