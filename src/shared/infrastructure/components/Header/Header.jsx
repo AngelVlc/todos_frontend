@@ -34,10 +34,6 @@ export const Header = () => {
         setIsDropdownActive(!isDropdownActive);
     }
 
-    const getUserInitial = () => {
-        return auth.info?.name?.charAt(0).toUpperCase() || 'U';
-    }
-
     const handleNavigation = (path) => {
         history.push(path);
         setIsDropdownActive(false);
