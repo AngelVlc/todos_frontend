@@ -5,7 +5,7 @@ import { LoginPage } from '../LoginPage';
 import { HomePage } from '../HomePage';
 import { Header } from '../Header';
 import { Footer } from '../Footer';
-import { ListsPage, NewListPage, ViewListPage, EditListPage, DeleteListPage, MoveListItemPage } from '../../../../lists/infrastructure/components/Lists';
+import { ListsPage, NewListPage, EditListPage, DeleteListPage, MoveListItemPage } from '../../../../lists/infrastructure/components/Lists';
 import { DeleteUserPage } from '../../../../auth/infrastructure/components/DeleteUserPage';
 import { UsersPage } from '../../../../auth/infrastructure/components/UsersPage';
 import { NewUserPage } from '../../../../auth/infrastructure/components/NewUserPage';
@@ -91,7 +91,6 @@ const App = () => {
               <PrivateRoute path="/lists/new" component={NewListPage} />
               <PrivateRoute path="/lists/:listId/delete" component={DeleteListPage} />
               <PrivateRoute path="/lists/:listId/moveItem/:listItemId" component={MoveListItemPage} />
-              <PrivateRoute path="/lists/:listId/read" component={ViewListPage} />
               <PrivateRoute path="/lists/:listId" component={EditListPage} />
               <PrivateRoute exact path="/categories" component={CategoriesPage} />
               <PrivateRoute path="/categories/new" component={NewCategoryPage} />

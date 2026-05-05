@@ -391,26 +391,6 @@ exports[`EditListPage should match the snapshot for an existing list 1`] = `
                   class="control"
                 >
                   <button
-                    class="button is-info is-light"
-                    data-testid="read"
-                    type="button"
-                  >
-                    <span
-                      class="icon"
-                    >
-                      <i
-                        class="fas fa-eye"
-                      />
-                    </span>
-                    <span>
-                      View
-                    </span>
-                  </button>
-                </div>
-                <div
-                  class="control"
-                >
-                  <button
                     class="button is-primary"
                     data-testid="submit"
                     type="submit"
