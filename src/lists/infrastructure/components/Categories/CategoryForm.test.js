@@ -102,7 +102,7 @@ describe("CategoryForm", () => {
       container = renderWithContextAndRouterForExistingCategory(false);
     });
 
-    await changeInputValue(container.getByTestId, "name", "updated category");
+    await changeInputValue(container.getByTestId, "name", "Updated Cat");
     await changeInputValue(container.getByTestId, "description", "updated desc");
 
     mockedUpdateCategoryUseCase.execute.mockResolvedValue({ id: 2 });
@@ -113,7 +113,7 @@ describe("CategoryForm", () => {
 
     expect(mockedUpdateCategoryUseCase.execute).toHaveBeenCalled();
 
-    const user = new Category({ id: 2, name: "updated category", description: "updated desc" });
+    const user = new Category({ id: 2, name: "Updated Cat", description: "updated desc" });
     expect(mockedUpdateCategoryUseCase.execute.mock.calls[0][0]).toStrictEqual(user);
 
     expect(mockHistoryPush).toHaveBeenCalled();
@@ -124,7 +124,7 @@ describe("CategoryForm", () => {
   it("should create a new category", async () => {
     const { getByTestId } = renderWithContextAndRouterForNewCategory();
 
-    await changeInputValue(getByTestId, "name", "new category");
+    await changeInputValue(getByTestId, "name", "New Cat");
     await changeInputValue(getByTestId, "description", "desc");
 
     mockedCreateCategoryUseCase.execute.mockResolvedValue({ id: 55 });
@@ -135,7 +135,7 @@ describe("CategoryForm", () => {
 
     expect(mockedCreateCategoryUseCase.execute).toHaveBeenCalled();
 
-    const category = new Category({ id: -1, name: "new category", description: "desc" });
+    const category = new Category({ id: -1, name: "New Cat", description: "desc" });
     expect(mockedCreateCategoryUseCase.execute.mock.calls[0][0]).toStrictEqual(category);
 
     expect(mockHistoryPush).toHaveBeenCalled();

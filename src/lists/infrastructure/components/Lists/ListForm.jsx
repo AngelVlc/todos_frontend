@@ -137,7 +137,9 @@ export const ListForm = (props) => {
         validateOnChange={false}
         validateOnBlur={false}
         validationSchema={Yup.object({
-          name: Yup.string().required("Required"),
+          name: Yup.string()
+            .required("Required")
+            .max(50, "List name cannot exceed 50 characters"),
         })}
         onSubmit={onSubmit}
       >

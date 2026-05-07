@@ -25,7 +25,11 @@ export const ListItemForm = forwardRef((props, ref) => {
       initialValues={ListItem.createEmpty(-1)}
       enableReinitialize={true}
       validationSchema={Yup.object({
-        title: Yup.string().required("Required"),
+        title: Yup.string()
+          .required("Required")
+          .max(50, "Title cannot exceed 50 characters"),
+        description: Yup.string()
+          .max(500, "Description cannot exceed 500 characters"),
       })}
       onSubmit={props.onSubmit}
     >

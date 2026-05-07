@@ -35,7 +35,9 @@ export const CategoryForm = (props) => {
       validateOnChange={false}
       validateOnBlur={false}
       validationSchema={Yup.object({
-        name: Yup.string().required("Required"),
+        name: Yup.string()
+          .required("Required")
+          .max(12, "Category name cannot exceed 12 characters"),
       })}
       onSubmit={onSubmit}
     >
