@@ -45,26 +45,75 @@ exports[`DeleteUserPage when the user is an admin should match the snapshot when
         </li>
       </ul>
     </nav>
-    <h3
-      class="title"
-    >
-      Delete admin user 'user'?
-    </h3>
     <div
-      class="buttons"
+      class="columns is-centered"
     >
-      <button
-        class="button is-danger"
-        data-testid="yes"
+      <div
+        class="column is-half"
       >
-        YES
-      </button>
-      <button
-        class="button"
-        data-testid="no"
-      >
-        NO
-      </button>
+        <div
+          class="card is-shadowless"
+        >
+          <div
+            class="card-content"
+          >
+            <div
+              class="has-text-centered mb-4"
+            >
+              <span
+                class="icon is-medium has-text-danger"
+              >
+                <i
+                  class="fas fa-user-times fa-3x"
+                />
+              </span>
+            </div>
+            <h3
+              class="title is-4 has-text-centered"
+            >
+              Delete admin user "user"?
+            </h3>
+            <p
+              class="has-text-centered mb-5"
+            >
+              This action cannot be undone. The user will be permanently removed from the system.
+            </p>
+            <div
+              class="field is-grouped is-grouped-centered"
+            >
+              <div
+                class="control"
+              >
+                <button
+                  class="button is-light"
+                  data-testid="no"
+                >
+                  Cancel
+                </button>
+              </div>
+              <div
+                class="control"
+              >
+                <button
+                  class="button is-danger"
+                  data-testid="yes"
+                >
+                  <span
+                    class="icon is-small"
+                  >
+                    <i
+                      class="fas fa-user-times"
+                    />
+                  </span>
+                  <span>
+                    Delete User
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -115,26 +164,75 @@ exports[`DeleteUserPage when the user is not an admin should match the snapshot 
         </li>
       </ul>
     </nav>
-    <h3
-      class="title"
-    >
-      Delete user user?
-    </h3>
     <div
-      class="buttons"
+      class="columns is-centered"
     >
-      <button
-        class="button is-danger"
-        data-testid="yes"
+      <div
+        class="column is-half"
       >
-        YES
-      </button>
-      <button
-        class="button"
-        data-testid="no"
-      >
-        NO
-      </button>
+        <div
+          class="card is-shadowless"
+        >
+          <div
+            class="card-content"
+          >
+            <div
+              class="has-text-centered mb-4"
+            >
+              <span
+                class="icon is-medium has-text-danger"
+              >
+                <i
+                  class="fas fa-user-times fa-3x"
+                />
+              </span>
+            </div>
+            <h3
+              class="title is-4 has-text-centered"
+            >
+              Delete user "user"?
+            </h3>
+            <p
+              class="has-text-centered mb-5"
+            >
+              This action cannot be undone. The user will be permanently removed from the system.
+            </p>
+            <div
+              class="field is-grouped is-grouped-centered"
+            >
+              <div
+                class="control"
+              >
+                <button
+                  class="button is-light"
+                  data-testid="no"
+                >
+                  Cancel
+                </button>
+              </div>
+              <div
+                class="control"
+              >
+                <button
+                  class="button is-danger"
+                  data-testid="yes"
+                >
+                  <span
+                    class="icon is-small"
+                  >
+                    <i
+                      class="fas fa-user-times"
+                    />
+                  </span>
+                  <span>
+                    Delete User
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </DocumentFragment>

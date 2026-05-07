@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useContext, useCallback } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { Breadcrumb } from "../../../../shared/infrastructure/components/Breadcrumb";
-import { YesNoButtons } from "../../../../shared/infrastructure/components/YesNoButtons";
 import { AppContext } from "../../../../shared/infrastructure/contexts";
 import {
   GetUserByIdUseCase,
@@ -43,12 +42,50 @@ export const DeleteUserPage = () => {
               { url: `/users/${userId}/delete`, text: `Delete ${user.name}` },
             ]}
           />
-          <h3 className="title">
-            {user.isAdmin
-              ? `Delete admin user '${user.name}'?`
-              : `Delete user ${user.name}?`}
-          </h3>
-          <YesNoButtons onYes={deleteUser} onNo={() => history.push('/users')}/>
+          <div className="columns is-centered">
+            <div className="column is-half">
+              <div className="card is-shadowless">
+                <div className="card-content">
+                  <div className="has-text-centered mb-4">
+                    <span className="icon is-medium has-text-danger">
+                      <i className="fas fa-user-times fa-3x"></i>
+                    </span>
+                  </div>
+                  <h3 className="title is-4 has-text-centered">
+                    {user.isAdmin
+                      ? `Delete admin user "${user.name}"?`
+                      : `Delete user "${user.name}"?`}
+                  </h3>
+                  <p className="has-text-centered mb-5">
+                    This action cannot be undone. The user will be permanently removed from the system.
+                  </p>
+                  <div className="field is-grouped is-grouped-centered">
+                    <div className="control">
+                      <button 
+                        className="button is-light" 
+                        data-testid="no"
+                        onClick={() => history.push('/users')}
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                    <div className="control">
+                      <button 
+                        className="button is-danger" 
+                        data-testid="yes"
+                        onClick={deleteUser}
+                      >
+                        <span className="icon is-small">
+                          <i className="fas fa-user-times"></i>
+                        </span>
+                        <span>Delete User</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </>

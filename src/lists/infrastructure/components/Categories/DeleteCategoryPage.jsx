@@ -6,7 +6,6 @@ import {
   GetCategoryByIdUseCase,
   DeleteCategoryByIdUseCase,
 } from "../../../application";
-import { YesNoButtons } from "../../../../shared/infrastructure/components/YesNoButtons";
 
 export const DeleteCategoryPage = () => {
   const [category, setCategory] = useState();
@@ -43,8 +42,48 @@ export const DeleteCategoryPage = () => {
               { url: `/categories/${categoryId}/delete`, text: 'Delete' },
             ]}
           />
-          <h3 className="title">{`Delete category ${category.name}`}</h3>
-          <YesNoButtons onYes={deleteCategory} onNo={() => history.push('/categories')}/>
+          <div className="columns is-centered">
+            <div className="column is-half">
+              <div className="card is-shadowless">
+                <div className="card-content">
+                  <div className="has-text-centered mb-4">
+                    <span className="icon is-medium has-text-danger">
+                      <i className="fas fa-trash fa-3x"></i>
+                    </span>
+                  </div>
+                  <h3 className="title is-4 has-text-centered">
+                    {`Delete category "${category.name}"?`}
+                  </h3>
+                  <p className="has-text-centered mb-5">
+                    This action cannot be undone. Lists using this category will be affected.
+                  </p>
+                  <div className="field is-grouped is-grouped-centered">
+                    <div className="control">
+                      <button 
+                        className="button is-light" 
+                        data-testid="no"
+                        onClick={() => history.push('/categories')}
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                    <div className="control">
+                      <button 
+                        className="button is-danger" 
+                        data-testid="yes"
+                        onClick={deleteCategory}
+                      >
+                        <span className="icon is-small">
+                          <i className="fas fa-trash"></i>
+                        </span>
+                        <span>Delete Category</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </>

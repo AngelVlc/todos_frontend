@@ -6,7 +6,6 @@ import {
   GetListByIdUseCase,
   DeleteListByIdUseCase,
 } from "../../../application";
-import { YesNoButtons } from "../../../../shared/infrastructure/components/YesNoButtons";
 
 export const DeleteListPage = () => {
   const [list, setList] = useState();
@@ -43,8 +42,48 @@ export const DeleteListPage = () => {
               { url: `/lists/${listId}/delete`, text: 'Delete' },
             ]}
           />
-          <h3 className="title">{`Delete list ${list.name}`}</h3>
-          <YesNoButtons onYes={deleteList} onNo={() => history.push('/lists')}/>
+          <div className="columns is-centered">
+            <div className="column is-half">
+              <div className="card is-shadowless">
+                <div className="card-content">
+                  <div className="has-text-centered mb-4">
+                    <span className="icon is-medium has-text-danger">
+                      <i className="fas fa-trash fa-3x"></i>
+                    </span>
+                  </div>
+                  <h3 className="title is-4 has-text-centered">
+                    {`Delete list "${list.name}"?`}
+                  </h3>
+                  <p className="has-text-centered mb-5">
+                    This action cannot be undone. All items in this list will be permanently deleted.
+                  </p>
+                  <div className="field is-grouped is-grouped-centered">
+                    <div className="control">
+                      <button 
+                        className="button is-light" 
+                        data-testid="no"
+                        onClick={() => history.push('/lists')}
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                    <div className="control">
+                      <button 
+                        className="button is-danger" 
+                        data-testid="yes"
+                        onClick={deleteList}
+                      >
+                        <span className="icon is-small">
+                          <i className="fas fa-trash"></i>
+                        </span>
+                        <span>Delete List</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </>
