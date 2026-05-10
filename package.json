@@ -18,7 +18,7 @@
     "react-loader-spinner": "^4.0.0",
     "react-router-dom": "^5.2.0",
     "save": "^2.4.0",
-    "yup": "^0.28.5"
+    "yup": "^1.7.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.15.0",
