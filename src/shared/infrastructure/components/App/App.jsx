@@ -21,6 +21,7 @@ import { useAlert } from 'react-alert';
 import { UseCaseFactory } from '../../UseCaseFactory';
 import Loader from 'react-loader-spinner';
 import * as axiosConfigure from '../../axiosConfigure';
+import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 import './App.css';
 
@@ -41,20 +42,46 @@ const App = () => {
   }, [request.error, alert, requestsDispatch]);
 
   useEffect(() => {
-    const token = localStorage.getItem('authToken');
-    if (token) {
-      try {
-        const decoded = jwtDecode(token);
-        authDispatch(userLoggedIn({
-          id: decoded.userId,
-          name: decoded.userName,
-          isAdmin: decoded.isAdmin
-        }));
-      } catch (error) {
-        localStorage.removeItem('authToken');
+    const initAuth = async () => {
+      const token = localStorage.getItem('authToken');
+      if (token) {
+        try {
+          const decoded = jwtDecode(token);
+          const now = Math.floor(Date.now() / 1000);
+          
+          if (decoded.exp > now) {
+            authDispatch(userLoggedIn({
+              id: decoded.userId,
+              name: decoded.userName,
+              isAdmin: decoded.isAdmin
+            }));
+          } else {
+            try {
+              const res = await axios.post('/auth/refreshtoken');
+              if (res.status === 200) {
+                const newToken = res.data.token || res.data.authToken;
+                if (newToken) {
+                  localStorage.setItem('authToken', newToken);
+                  const newDecoded = jwtDecode(newToken);
+                  authDispatch(userLoggedIn({
+                    id: newDecoded.userId,
+                    name: newDecoded.userName,
+                    isAdmin: newDecoded.isAdmin
+                  }));
+                }
+              }
+            } catch (refreshError) {
+              localStorage.removeItem('authToken');
+            }
+          }
+        } catch (error) {
+          localStorage.removeItem('authToken');
+        }
       }
-    }
-    setIsLoading(false);
+      setIsLoading(false);
+    };
+    
+    initAuth();
     axiosConfigure.configure(requestsDispatch, browserHistory);
   }, [authDispatch]);
 
