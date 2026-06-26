@@ -11,7 +11,7 @@ export const HomePage = () => {
             <div className="container">
                 <h1 className="title has-text-centered mb-6">Welcome to To Dos</h1>
 
-                <div>
+                <div className="mb-6">
                     <h2 className="subtitle is-5 has-text-grey mb-4">Lists</h2>
                     <div className="columns is-multiline">
                         <div className="column is-4 is-6-tablet is-12-mobile">
@@ -58,7 +58,7 @@ export const HomePage = () => {
                 </div>
 
                 {auth.info?.isAdmin && (
-                    <div className="mb-6">
+                    <div>
                         <h2 className="subtitle is-5 has-text-grey mb-4">Admin</h2>
                     <div className="columns is-multiline">
                         <div className="column is-4 is-6-tablet is-12-mobile">
