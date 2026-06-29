@@ -13,7 +13,9 @@ exports[`HomePage when the user is an admin should match the snapshot 1`] = `
       >
         Welcome to To Dos
       </h1>
-      <div>
+      <div
+        class="mb-6"
+      >
         <h2
           class="subtitle is-5 has-text-grey mb-4"
         >
@@ -86,9 +88,7 @@ exports[`HomePage when the user is an admin should match the snapshot 1`] = `
           </div>
         </div>
       </div>
-      <div
-        class="mb-6"
-      >
+      <div>
         <h2
           class="subtitle is-5 has-text-grey mb-4"
         >
