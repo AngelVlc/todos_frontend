@@ -1,4 +1,4 @@
-FROM node:18.17.0-alpine3.17 as base
+FROM node:22.23.1-alpine AS base
 
 ARG BACKEND_URL
 ARG COMMIT_SHA
@@ -20,7 +20,7 @@ COPY . $APP
 
 RUN npm run-script build
 
-FROM node:18.10.0-alpine3.16 as release
+FROM node:22.23.1-alpine AS release
 
 ENV APP /app
 WORKDIR $APP
