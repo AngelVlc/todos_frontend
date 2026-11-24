@@ -1,6 +1,9 @@
 build:
 	docker build --target base -t todos_base .
 
+lint:
+	docker run -it --rm todos_base npm run lint
+
 test:
 	docker run -it --rm todos_base npm test
 

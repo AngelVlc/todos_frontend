@@ -61,6 +61,7 @@ jobs:
     steps:
       - checkout
       - run: make build
+      - run: make lint
       - run: make audit
       - run: make test-ci
       - configure_gcloud_credentials
