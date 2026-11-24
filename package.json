@@ -24,21 +24,34 @@
     "yup": "^0.28.5"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^12.1.0",
     "@testing-library/user-event": "^13.5.0",
+    "@vitejs/plugin-react": "5.2.0",
+    "babel-jest": "29.7.0",
+    "eslint": "8.57.1",
+    "eslint-config-react-app": "7.0.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "29.7.0",
+    "jest-environment-jsdom": "29.7.0",
     "react-beautiful-dnd-test-utils": "^4.1.0",
-    "react-scripts": "5.0.1"
+    "vite": "8.3.8",
+    "whatwg-fetch": "^3.6.20"
   },
   "overrides": {
     "qs": "^6.17.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "coverage": "react-scripts test --coverage --coverageDirectory='coverage' --watchAll=false"
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "coverage": "jest --coverage --coverageDirectory=coverage --watchAll=false",
+    "lint": "eslint src --ext .js,.jsx"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -54,10 +67,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "jest": {
-    "moduleNameMapper": {
-      "axios": "axios/dist/node/axios.cjs"
-    }
   }
 }
