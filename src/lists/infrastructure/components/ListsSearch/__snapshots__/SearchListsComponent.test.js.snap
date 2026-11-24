@@ -34,6 +34,7 @@ exports[`SearchListsComponent when the secure key is not empty should match the 
         value=""
       />
       <button
+        aria-label="Submit the search query"
         class="ais-SearchBox-submit"
         title="Submit the search query"
         type="submit"
@@ -51,6 +52,7 @@ exports[`SearchListsComponent when the secure key is not empty should match the 
         </svg>
       </button>
       <button
+        aria-label="Clear the search query"
         class="ais-SearchBox-reset"
         hidden=""
         title="Clear the search query"
