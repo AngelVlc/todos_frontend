@@ -12,9 +12,9 @@ ENV APP /app
 WORKDIR $APP
 
 COPY package.json $APP
-COPY yarn.lock $APP
+COPY package-lock.json $APP
 
-RUN npm install
+RUN npm ci
 
 COPY . $APP
 
@@ -25,7 +25,7 @@ FROM node:18.10.0-alpine3.16 as release
 ENV APP /app
 WORKDIR $APP
 
-RUN yarn global add serve
+RUN npm install -g serve
 
 COPY --from=base /app/build/ /app/
 
