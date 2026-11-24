@@ -27,6 +27,9 @@
     "react-beautiful-dnd-test-utils": "^4.1.0",
     "react-scripts": "5.0.1"
   },
+  "overrides": {
+    "qs": "^6.17.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
